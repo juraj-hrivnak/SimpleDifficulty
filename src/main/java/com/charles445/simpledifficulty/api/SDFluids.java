@@ -11,7 +11,7 @@ public class SDFluids
 	public static final Map<String, Fluid> fluids = new LinkedHashMap<String, Fluid>();
 	public static final Map<String, BlockFluidBase> fluidBlocks = new LinkedHashMap<String, BlockFluidBase>();
 	
-	public static Fluid purifiedWater;
-	
-	public static BlockFluidBase blockPurifiedWater;
+	public static Fluid purifiedWater, saltWater;
+
+	public static BlockFluidBase blockPurifiedWater, blockSaltWater;
 }

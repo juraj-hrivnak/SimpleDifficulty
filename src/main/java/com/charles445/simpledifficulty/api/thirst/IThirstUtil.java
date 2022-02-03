@@ -9,13 +9,14 @@ public interface IThirstUtil
 {
 	@Nullable
 	public ThirstEnumBlockPos traceWater(EntityPlayer player);
-	
+
 	public void takeDrink(EntityPlayer player, int thirst, float saturation, float dirtyChance);
-	
+
 	public void takeDrink(EntityPlayer player, int thirst, float saturation);
 	
 	public void takeDrink(EntityPlayer player, ThirstEnum type);
 	
 	public ItemStack createPurifiedWaterBucket();
-	
+	public ItemStack createSaltWaterBucket();
+
 }

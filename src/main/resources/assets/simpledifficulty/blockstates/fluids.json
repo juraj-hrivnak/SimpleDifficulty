@@ -6,6 +6,9 @@
     "variants": {
         "purifiedwater": [{
             "custom": { "fluid": "purifiedwater" }
+        }],
+        "saltwater": [{
+            "custom": { "fluid": "saltwater" }
         }]
     }
 }

@@ -24,6 +24,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import java.util.Objects;
+
 public class RegisterFluids
 {
 	//TODO block placing sound
@@ -39,18 +41,24 @@ public class RegisterFluids
 			
 			//Create Fluids
 			purifiedWater = new FluidBasic(
-				"purifiedwater",
-				"purifiedwater_still",
-				"purifiedwater_flow",
-				0xFF44AFF5
+					"purifiedwater",
+					"purifiedwater_still",
+					"purifiedwater_flow",
+					0xFF80ccff
 			);
-			
+			saltWater = new FluidBasic(
+					"saltwater",
+					"saltwater_still",
+					"saltwater_flow",
+					0xFF567af0
+			);
+
 			//Fluids register themselves
 			
 			//Create Fluid Blocks
-			
 			blockPurifiedWater = new BlockFluidBasic(purifiedWater, Material.WATER);
-			
+			blockSaltWater = new BlockFluidBasic(saltWater, Material.WATER);
+
 			for(String key : fluidBlocks.keySet())
 			{
 				registry.register(fluidBlocks.get(key));
@@ -71,7 +79,7 @@ public class RegisterFluids
 		private static ItemBlock makeItemFromBlock(Block block)
 		{
 			ItemBlock itemblock = new ItemBlock(block);
-			itemblock.setRegistryName(block.getRegistryName());
+			itemblock.setRegistryName(Objects.requireNonNull(block.getRegistryName()));
 			itemblock.setCreativeTab(ModCreativeTab.instance);
 			return itemblock;
 		}
@@ -91,6 +99,7 @@ public class RegisterFluids
 			};
 
 			blockColors.registerBlockColorHandler(waterColourHandler, blockPurifiedWater);
+			blockColors.registerBlockColorHandler(waterColourHandler, blockSaltWater);
 		}
 
 		@SideOnly(Side.CLIENT)
@@ -107,6 +116,7 @@ public class RegisterFluids
 			};
 
 			itemColors.registerItemColorHandler(itemBlockColourHandler, blockPurifiedWater);
+			itemColors.registerItemColorHandler(itemBlockColourHandler, blockSaltWater);
 		}
 	}
 }

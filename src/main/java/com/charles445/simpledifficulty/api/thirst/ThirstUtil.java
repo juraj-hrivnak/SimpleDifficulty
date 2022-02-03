@@ -64,4 +64,13 @@ public class ThirstUtil
 	{
 		return internal.createPurifiedWaterBucket();
 	}
+
+	/**
+	 * Returns a new Salt Water Bucket item
+	 * @return ItemStack salt water bucket
+	 */
+	public static ItemStack createSaltWaterBucket()
+	{
+		return internal.createSaltWaterBucket();
+	}
 }

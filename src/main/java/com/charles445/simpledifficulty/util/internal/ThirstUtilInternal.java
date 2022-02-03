@@ -59,6 +59,10 @@ public class ThirstUtilInternal implements IThirstUtil
 				{
 					return null;
 				}
+				else if(traceResult.thirstEnum == ThirstEnum.SALT && !ServerConfig.instance.getBoolean(ServerOptions.THIRST_DRINK_BLOCKS))
+				{
+					return null;
+				}
 				
 				return traceResult;
 			}
@@ -110,10 +114,14 @@ public class ThirstUtilInternal implements IThirstUtil
 		{
 			return new ThirstEnumBlockPos(ThirstEnum.PURIFIED, trace.getBlockPos());
 		}
+		else if(traceBlock == SDFluids.blockSaltWater)
+		{
+			return new ThirstEnumBlockPos(ThirstEnum.SALT, trace.getBlockPos());
+		}
 		
 		return null;
 	}
-	
+
 	@Override
 	public void takeDrink(EntityPlayer player, int thirst, float saturation, float dirtyChance)
 	{
@@ -136,16 +144,19 @@ public class ThirstUtilInternal implements IThirstUtil
 			//Old
 			//capability.addThirstSaturation(Math.min(1.0f, saturation) * thirst);
 			
-			//Test for dirtiness
-			if(dirtyChance != 0.0f && player.world.rand.nextFloat() < dirtyChance)
+			//Test for dirtiness >> water
+			if(dirtyChance == 0.75f && player.world.rand.nextFloat() < dirtyChance)
 			{
-				player.addPotionEffect(new PotionEffect(SDPotions.thirsty,600));
-				
 				//Test for parasites
 				if(ModConfig.server.thirst.thirstParasites && player.world.rand.nextDouble() < ModConfig.server.thirst.thirstParasitesChance)
 				{
 					player.addPotionEffect(new PotionEffect(SDPotions.parasites, ModConfig.server.thirst.thirstParasitesDuration));
 				}
+			}
+			//Test for dirtiness >> salt water
+			if(dirtyChance == 1.0f) {
+				player.world.rand.nextFloat();
+				player.addPotionEffect(new PotionEffect(SDPotions.thirsty, 600));
 			}
 		}
 		else
@@ -156,7 +167,7 @@ public class ThirstUtilInternal implements IThirstUtil
 				capability.setThirstSaturation(saturation);
 		}
 	}
-	
+
 	@Override
 	public void takeDrink(EntityPlayer player, int thirst, float saturation)
 	{
@@ -174,5 +185,11 @@ public class ThirstUtilInternal implements IThirstUtil
 	public ItemStack createPurifiedWaterBucket()
 	{
 		return FluidUtil.getFilledBucket(new FluidStack(SDFluids.purifiedWater, Fluid.BUCKET_VOLUME));
+	}
+
+	@Override
+	public ItemStack createSaltWaterBucket()
+	{
+		return FluidUtil.getFilledBucket(new FluidStack(SDFluids.saltWater, Fluid.BUCKET_VOLUME));
 	}
 }

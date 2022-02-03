@@ -19,7 +19,8 @@ public class SDItems
 	public static Item charcoalFilter;
 	public static Item juice;
 	public static Item purifiedWaterBottle;
-	
+	public static Item saltWaterBottle;
+
 	public static Item ice_chunk;
 	public static Item magma_chunk;
 	

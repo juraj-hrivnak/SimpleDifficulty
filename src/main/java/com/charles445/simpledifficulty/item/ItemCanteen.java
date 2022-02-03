@@ -61,10 +61,14 @@ public class ItemCanteen extends ItemDrinkBase implements IItemCanteen
 			
 			ItemStack purifiedCanteen = fullCanteen.copy();
 			setTypeTag(purifiedCanteen, ThirstEnum.PURIFIED.ordinal());
+
+			ItemStack saltCanteen = fullCanteen.copy();
+			setTypeTag(saltCanteen, ThirstEnum.SALT.ordinal());
 			
 			items.add(emptyCanteen);
 			items.add(fullCanteen);
 			items.add(purifiedCanteen);
+			items.add(saltCanteen);
 			
 		}
 	}

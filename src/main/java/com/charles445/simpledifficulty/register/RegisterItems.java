@@ -7,13 +7,7 @@ import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDItems;
 import com.charles445.simpledifficulty.config.JsonConfigInternal;
 import com.charles445.simpledifficulty.config.json.ExtraItem;
-import com.charles445.simpledifficulty.item.ItemArmorTemperature;
-import com.charles445.simpledifficulty.item.ItemCanteen;
-import com.charles445.simpledifficulty.item.ItemDragonCanteen;
-import com.charles445.simpledifficulty.item.ItemIronCanteen;
-import com.charles445.simpledifficulty.item.ItemJuice;
-import com.charles445.simpledifficulty.item.ItemPurifiedWaterBottle;
-import com.charles445.simpledifficulty.item.ItemThermometer;
+import com.charles445.simpledifficulty.item.*;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -51,6 +45,7 @@ public class RegisterItems
 			IForgeRegistry<Item> registry = event.getRegistry();
 			
 			purifiedWaterBottle = registerAs("purified_water_bottle", new ItemPurifiedWaterBottle(), registry);
+			saltWaterBottle = registerAs("salt_water_bottle", new ItemSaltWaterBottle(), registry);
 			juice = registerAs("juice", new ItemJuice(), registry);
 			canteen = registerAs("canteen", new ItemCanteen(), registry);
 			ironCanteen = registerAs("iron_canteen", new ItemIronCanteen(), registry);
