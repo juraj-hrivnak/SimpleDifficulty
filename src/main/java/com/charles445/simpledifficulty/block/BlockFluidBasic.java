@@ -9,11 +9,17 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Map;
 
@@ -41,8 +47,17 @@ public class BlockFluidBasic extends BlockFluidClassic
 			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("backportedflora", "seagrass")), false);
 			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("backportedflora", "kelp")), false);
 		}
+		if (Loader.isModLoaded("dynamictreesbop")) {
+			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("dynamictreesbop", "rootywater")), false);
+		}
 
 		customDisplacements.put(Blocks.WATER, false);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public Vec3d getFogColor(World world, BlockPos pos, IBlockState state, Entity entity, Vec3d originalColor, float partialTicks) {
+		return super.getFogColor(world, pos, Blocks.WATER.getDefaultState(), entity, originalColor, partialTicks);
 	}
 
 	@Override
