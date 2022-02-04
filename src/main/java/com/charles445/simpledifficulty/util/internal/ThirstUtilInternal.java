@@ -109,11 +109,11 @@ public class ThirstUtilInternal implements IThirstUtil
 		Block traceBlock = player.getEntityWorld().getBlockState(trace.getBlockPos()).getBlock();
 		if(traceBlock == Blocks.WATER)
 		{
-			return new ThirstEnumBlockPos(ThirstEnum.PURIFIED, trace.getBlockPos());
+			return new ThirstEnumBlockPos(ThirstEnum.NORMAL, trace.getBlockPos());
 		}
 		else if(traceBlock == SDFluids.blockPurifiedWater)
 		{
-			return new ThirstEnumBlockPos(ThirstEnum.NORMAL, trace.getBlockPos());
+			return new ThirstEnumBlockPos(ThirstEnum.PURIFIED, trace.getBlockPos());
 		}
 		else if(traceBlock == SDFluids.blockSaltWater)
 		{
