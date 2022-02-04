@@ -44,21 +44,21 @@ public class ThirstUtilInternal implements IThirstUtil
 				if(traceResult==null)
 					return null;
 				
-				if(traceResult.thirstEnum == ThirstEnum.PURIFIED)
+				if(traceResult.thirstEnum == ThirstEnum.PURIFIED && !ServerConfig.instance.getBoolean(ServerOptions.THIRST_DRINK_RAIN))
 				{
-					if(!ServerConfig.instance.getBoolean(ServerOptions.THIRST_DRINK_BLOCKS))
-						return null;
-					
-					if(!ServerConfig.instance.getBoolean(ServerOptions.INFINITE_PURIFIED_WATER))
-						player.world.setBlockToAir(traceResult.pos);
+					return null;
 				}
 				else if(traceResult.thirstEnum == ThirstEnum.RAIN && !ServerConfig.instance.getBoolean(ServerOptions.THIRST_DRINK_RAIN))
 				{
 					return null;
 				}
-				else if(traceResult.thirstEnum == ThirstEnum.NORMAL && !ServerConfig.instance.getBoolean(ServerOptions.THIRST_DRINK_BLOCKS))
+				else if(traceResult.thirstEnum == ThirstEnum.NORMAL)
 				{
-					return null;
+					if(!ServerConfig.instance.getBoolean(ServerOptions.THIRST_DRINK_BLOCKS))
+						return null;
+
+					if(!ServerConfig.instance.getBoolean(ServerOptions.INFINITE_PURIFIED_WATER))
+						player.world.setBlockToAir(traceResult.pos);
 				}
 				else if(traceResult.thirstEnum == ThirstEnum.SALT && !ServerConfig.instance.getBoolean(ServerOptions.THIRST_DRINK_BLOCKS))
 				{
