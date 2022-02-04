@@ -22,9 +22,11 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -128,7 +130,7 @@ public class BlockRainCollector extends Block
 						{
 							//Server Side
 							this.setWaterLevel(world, pos, state, amount - 1);
-							ThirstUtil.takeDrink(player, ThirstEnum.PURIFIED);
+							ThirstUtil.takeDrink(player, ThirstEnum.NORMAL);
 						}
 					}
 				}
@@ -155,11 +157,11 @@ public class BlockRainCollector extends Block
 
 						if (itemstack.isEmpty())
 						{
-							player.setHeldItem(hand, ThirstUtil.createPurifiedWaterBucket());
+							player.setHeldItem(hand, ThirstUtil.createNormalWaterBucket());
 						}
-						else if (!player.inventory.addItemStackToInventory(ThirstUtil.createPurifiedWaterBucket()))
+						else if (!player.inventory.addItemStackToInventory(ThirstUtil.createNormalWaterBucket()))
 						{
-							player.dropItem(ThirstUtil.createPurifiedWaterBucket(), false);
+							player.dropItem(ThirstUtil.createNormalWaterBucket(), false);
 						}
 						//Should this also update the player's inventory like glass bottles do?
 					}
@@ -179,11 +181,11 @@ public class BlockRainCollector extends Block
 						
 						if (itemstack.isEmpty())
 						{
-							player.setHeldItem(hand, new ItemStack(SDItems.purifiedWaterBottle));
+							player.setHeldItem(hand, PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER));
 						}
-						else if (!player.inventory.addItemStackToInventory(new ItemStack(SDItems.purifiedWaterBottle)))
+						else if (!player.inventory.addItemStackToInventory(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER)))
 						{
-							player.dropItem(new ItemStack(SDItems.purifiedWaterBottle), false);
+							player.dropItem(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER), false);
 						}
 						else if (player instanceof EntityPlayerMP)
 						{
@@ -207,7 +209,7 @@ public class BlockRainCollector extends Block
 						ThirstEnum type = canteen.getThirstEnum(itemstack);
 						
 						//Try to add a dose of purified water
-						if(canteen.tryAddDose(itemstack, ThirstEnum.PURIFIED))
+						if(canteen.tryAddDose(itemstack, ThirstEnum.NORMAL))
 						{
 							//Drain collector
 							this.setWaterLevel(world, pos, state, amount - 1);

@@ -18,5 +18,6 @@ public interface IThirstUtil
 	
 	public ItemStack createPurifiedWaterBucket();
 	public ItemStack createSaltWaterBucket();
+	public ItemStack createNormalWaterBucket();
 
 }

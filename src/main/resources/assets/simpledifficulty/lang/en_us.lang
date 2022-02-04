@@ -16,16 +16,16 @@ enchantment.heating=Heating
 enchantment.simpledifficulty.chilling.desc=Reduces player temperature when worn
 enchantment.simpledifficulty.heating.desc=Increases player temperature when worn
 
-fluid.purifiedwater=Purified Water
+fluid.purifiedwater=Regular Water
 fluid.saltwater=Salt Water
 
 itemGroup.tabSimpleDifficulty=SimpleDifficulty
 
 item.simpledifficulty:canteen_broken.name=Broken Canteen
 item.simpledifficulty:canteen_empty.name=Empty Canteen
-item.simpledifficulty:canteen_normal.name=Water Canteen
-item.simpledifficulty:canteen_purified.name=Purified Canteen
-item.simpledifficulty:canteen_salt.name=Salt Canteen
+item.simpledifficulty:canteen_normal.name=Spring Water Canteen
+item.simpledifficulty:canteen_purified.name=Regular Water Canteen
+item.simpledifficulty:canteen_salt.name=Salt Water Canteen
 
 item.simpledifficulty:charcoal_filter.name=Charcoal Filter
 
@@ -49,7 +49,7 @@ item.simpledifficulty:juice_pumpkin.name=Pumpkin Juice
 
 item.simpledifficulty:magma_chunk.name=Magma Chunk
 
-item.simpledifficulty:purified_water_bottle.name=Purified Water Bottle
+item.simpledifficulty:purified_water_bottle.name=Regular Water Bottle
 item.simpledifficulty:salt_water_bottle.name=Salt Water Bottle
 
 item.simpledifficulty:thermometer.name=Thermometer
@@ -77,7 +77,7 @@ splash_potion.effect.long_heat_resist_type=Splash Potion of Heat Resistance
 tile.simpledifficulty:campfire.name=Campfire
 tile.simpledifficulty:chiller.name=Chiller
 tile.simpledifficulty:heater.name=Heater
-tile.simpledifficulty:purifiedwater.name=Purified Water
+tile.simpledifficulty:purifiedwater.name=Regular Water
 tile.simpledifficulty:rain_collector.name=Rain Collector
 tile.simpledifficulty:spit.name=Campfire Spit
 
@@ -88,15 +88,17 @@ tipped_arrow.effect.long_heat_resist_type=Arrow of Heat Resistance
 
 item.simpledifficulty:frost_rod.name=Frost Rod
 item.simpledifficulty:frost_powder.name=Frost Powder
+
 item.simpledifficulty:iron_canteen_broken.name=Broken Iron Canteen
 item.simpledifficulty:iron_canteen_empty.name=Empty Iron Canteen
-item.simpledifficulty:iron_canteen_normal.name=Water Iron Canteen
-item.simpledifficulty:iron_canteen_purified.name=Purified Iron Canteen
-item.simpledifficulty:iron_canteen_salt.name=Salt Iron Canteen
+item.simpledifficulty:iron_canteen_normal.name=Spring Water Iron Canteen
+item.simpledifficulty:iron_canteen_purified.name=Regular Water Iron Canteen
+item.simpledifficulty:iron_canteen_salt.name=Salt Water Iron Canteen
+
 item.simpledifficulty:dragon_canteen_broken.name=Broken Dragon Canteen
 item.simpledifficulty:dragon_canteen_empty.name=Empty Dragon Canteen
-item.simpledifficulty:dragon_canteen_normal.name=Water Dragon Canteen
-item.simpledifficulty:dragon_canteen_purified.name=Purified Dragon Canteen
-item.simpledifficulty:dragon_canteen_salt.name=Salt Dragon Canteen
+item.simpledifficulty:dragon_canteen_normal.name=Spring Water Dragon Canteen
+item.simpledifficulty:dragon_canteen_purified.name=Regular Water Dragon Canteen
+item.simpledifficulty:dragon_canteen_salt.name=Salt Water Dragon Canteen
 
 death.attack.inspirationscauldronburn=%1$s died from drinking boiling water

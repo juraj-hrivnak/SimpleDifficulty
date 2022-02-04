@@ -2,11 +2,11 @@ package com.charles445.simpledifficulty.api.thirst;
 
 public enum ThirstEnum
 {
-	NORMAL	("normal",		3,	0.3f, 	0.75f),
+	NORMAL	("normal",		6,	3.0f, 	0.00f),
 	SALT	("salt",		-1,	-0.1f, 	1.00f),
 	RAIN	("rain",		1,	0.05f,	0.0f),
 	POTION	("potion",		2,	0.2f,	0.0f),
-	PURIFIED("purified",	6,	3.0f,	0.0f);
+	PURIFIED("purified",	3,	0.3f,	0.75f);
 	
 	private final String name;
 	private final int thirst;

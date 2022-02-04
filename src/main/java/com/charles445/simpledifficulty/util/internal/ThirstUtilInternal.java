@@ -23,6 +23,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 
@@ -38,7 +39,7 @@ public class ThirstUtilInternal implements IThirstUtil
 			IThirstCapability capability = SDCapabilities.getThirstData(player);
 			if(capability.isThirsty())
 			{
-				//Empty handed and thirsty
+				//Empty-handed and thirsty
 				ThirstEnumBlockPos traceResult = ThirstUtil.traceWater(player);
 				if(traceResult==null)
 					return null;
@@ -108,11 +109,11 @@ public class ThirstUtilInternal implements IThirstUtil
 		Block traceBlock = player.getEntityWorld().getBlockState(trace.getBlockPos()).getBlock();
 		if(traceBlock == Blocks.WATER)
 		{
-			return new ThirstEnumBlockPos(ThirstEnum.NORMAL, trace.getBlockPos());
+			return new ThirstEnumBlockPos(ThirstEnum.PURIFIED, trace.getBlockPos());
 		}
 		else if(traceBlock == SDFluids.blockPurifiedWater)
 		{
-			return new ThirstEnumBlockPos(ThirstEnum.PURIFIED, trace.getBlockPos());
+			return new ThirstEnumBlockPos(ThirstEnum.NORMAL, trace.getBlockPos());
 		}
 		else if(traceBlock == SDFluids.blockSaltWater)
 		{
@@ -153,6 +154,7 @@ public class ThirstUtilInternal implements IThirstUtil
 					player.addPotionEffect(new PotionEffect(SDPotions.parasites, ModConfig.server.thirst.thirstParasitesDuration));
 				}
 			}
+
 			//Test for dirtiness >> salt water
 			if(dirtyChance == 1.0f) {
 				player.world.rand.nextFloat();
@@ -191,5 +193,11 @@ public class ThirstUtilInternal implements IThirstUtil
 	public ItemStack createSaltWaterBucket()
 	{
 		return FluidUtil.getFilledBucket(new FluidStack(SDFluids.saltWater, Fluid.BUCKET_VOLUME));
+	}
+
+	@Override
+	public ItemStack createNormalWaterBucket()
+	{
+		return FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.WATER, Fluid.BUCKET_VOLUME));
 	}
 }
