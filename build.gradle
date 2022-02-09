@@ -26,9 +26,17 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
-dependencies {
-    
+repositories {
+    mavenCentral()
+    maven {
+        name = "curseforge"
+        url "https://www.cursemaven.com"
+    }
+}
 
+dependencies {
+    deobfCompile "curse.maven:streams-229769:3109315"
+    deobfCompile "curse.maven:farseek-229708:3093852"
 }
 
 processResources{

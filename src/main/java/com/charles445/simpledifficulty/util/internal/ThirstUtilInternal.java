@@ -20,12 +20,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
+
+import static net.minecraft.block.Block.REGISTRY;
 
 public class ThirstUtilInternal implements IThirstUtil
 {
@@ -119,9 +122,38 @@ public class ThirstUtilInternal implements IThirstUtil
 		{
 			return new ThirstEnumBlockPos(ThirstEnum.SALT, trace.getBlockPos());
 		}
+		int i;
+		String x;
+		for (i = 0; i < riverBlocks.length; i++) {
+			x = riverBlocks[i];
+			if (traceBlock == REGISTRY.getObject(new ResourceLocation("streams", x))) {
+				return new ThirstEnumBlockPos(ThirstEnum.NORMAL, trace.getBlockPos());
+			}
+		}
 		
 		return null;
 	}
+
+	String[] riverBlocks = {
+		"river/tile.water/-1/-2",
+		"river/tile.water/-1/2",
+		"river/tile.water/-2/-1",
+		"river/tile.water/-2/-2",
+		"river/tile.water/-2/0",
+		"river/tile.water/-2/1",
+		"river/tile.water/-2/2",
+		"river/tile.water/0/-2",
+		"river/tile.water/0/0",
+		"river/tile.water/0/2",
+		"river/tile.water/1/-2",
+		"river/tile.water/1/2",
+		"river/tile.water/2/-1",
+		"river/tile.water/2/-2",
+		"river/tile.water/2/0",
+		"river/tile.water/2/1",
+		"river/tile.water/2/2"
+	};
+
 
 	@Override
 	public void takeDrink(EntityPlayer player, int thirst, float saturation, float dirtyChance)
