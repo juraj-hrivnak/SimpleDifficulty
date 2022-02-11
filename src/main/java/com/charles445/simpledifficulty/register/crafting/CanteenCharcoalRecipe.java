@@ -42,7 +42,7 @@ public class CanteenCharcoalRecipe extends ShapelessOreRecipe
 				if(!ingredient.isEmpty() && (ingredient.getItem() == SDItems.canteen || ingredient.getItem() == SDItems.ironCanteen))
 				{
 					IItemCanteen canteen = (ItemCanteen)ingredient.getItem();
-					canteen.setDoses(output, ThirstEnum.PURIFIED, canteen.getDoses(ingredient));
+					canteen.setDoses(output, ThirstEnum.NORMAL, canteen.getDoses(ingredient));
 					break;
 				}
 			}
