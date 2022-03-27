@@ -32,11 +32,17 @@ repositories {
         name = "curseforge"
         url "https://www.cursemaven.com"
     }
+    maven {
+        url 'https://jitpack.io'
+    }
 }
 
 dependencies {
     deobfCompile "curse.maven:streams-229769:3109315"
     deobfCompile "curse.maven:farseek-229708:3093852"
+
+    // Fluidlogged API
+    compileOnly 'com.github.jbredwards:fluidlogged-api:ccf9bba5ec'
 }
 
 processResources{
