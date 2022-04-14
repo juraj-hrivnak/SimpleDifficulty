@@ -4,6 +4,7 @@ import static com.charles445.simpledifficulty.api.SDFluids.*;
 
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.block.BlockFluidBasic;
+import com.charles445.simpledifficulty.block.BlockFluidBasicMixable;
 import com.charles445.simpledifficulty.fluid.FluidBasic;
 
 import net.minecraft.block.Block;
@@ -44,7 +45,7 @@ public class RegisterFluids
 					"purifiedwater",
 					"purifiedwater_still",
 					"purifiedwater_flow",
-					0xFFFFFFFF
+					0xFF298409
 			);
 			saltWater = new FluidBasic(
 					"saltwater",
@@ -56,7 +57,7 @@ public class RegisterFluids
 			//Fluids register themselves
 			
 			//Create Fluid Blocks
-			blockPurifiedWater = new BlockFluidBasic(purifiedWater, Material.WATER);
+			blockPurifiedWater = new BlockFluidBasicMixable(purifiedWater, Material.WATER);
 			blockSaltWater = new BlockFluidBasic(saltWater, Material.WATER);
 
 			for(String key : fluidBlocks.keySet())

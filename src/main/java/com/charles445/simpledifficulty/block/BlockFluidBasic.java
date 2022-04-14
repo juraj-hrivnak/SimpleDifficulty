@@ -47,6 +47,11 @@ public class BlockFluidBasic extends BlockFluidClassic
 			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("backportedflora", "seagrass")), false);
 			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("backportedflora", "kelp")), false);
 		}
+		if (Loader.isModLoaded("greenery")) {
+			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("greenery", "rivergrass")), false);
+			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("greenery", "seagrass")), false);
+			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("greenery", "kelp")), false);
+		}
 		if (Loader.isModLoaded("dynamictreesbop")) {
 			customDisplacements.put(REGISTRY.getObject(new ResourceLocation("dynamictreesbop", "rootywater")), false);
 		}
