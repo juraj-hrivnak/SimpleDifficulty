@@ -1,10 +1,8 @@
 package com.charles445.simpledifficulty.block;
 
 import com.charles445.simpledifficulty.api.SDFluids;
-
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
-
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -68,10 +66,6 @@ public class BlockFluidBasic extends BlockFluidClassic
 	@Override
 	@SuppressWarnings("deprecation")
 	public int getLightOpacity(IBlockState state) {
-		if (ServerConfig.instance.getBoolean(ServerOptions.PURIFIED_WATER_OPACITY)) {
-			return 1;
-		} else {
-			return 3;
-		}
+		return ServerConfig.instance.getBoolean(ServerOptions.PURIFIED_WATER_OPACITY) ? 1 : 3;
 	}
 }

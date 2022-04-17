@@ -1,12 +1,9 @@
 package com.charles445.simpledifficulty.register;
 
-import static com.charles445.simpledifficulty.api.SDFluids.*;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.block.BlockFluidBasic;
 import com.charles445.simpledifficulty.block.BlockFluidBasicMixable;
 import com.charles445.simpledifficulty.fluid.FluidBasic;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -27,6 +24,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.Objects;
 
+import static com.charles445.simpledifficulty.api.SDFluids.*;
+
 public class RegisterFluids
 {
 	//TODO block placing sound
@@ -45,13 +44,13 @@ public class RegisterFluids
 					"purifiedwater",
 					"purifiedwater_still",
 					"purifiedwater_flow",
-					0xFF298409
+					0xFF00eeff
 			);
 			saltWater = new FluidBasic(
 					"saltwater",
 					"saltwater_still",
 					"saltwater_flow",
-					0xFFFFFFFF
+					0xFF00eeff
 			);
 
 			//Fluids register themselves

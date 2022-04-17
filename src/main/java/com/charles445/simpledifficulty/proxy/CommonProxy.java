@@ -13,27 +13,10 @@ import com.charles445.simpledifficulty.capability.ThirstStorage;
 import com.charles445.simpledifficulty.compat.CompatController;
 import com.charles445.simpledifficulty.config.JsonConfigInternal;
 import com.charles445.simpledifficulty.config.ModConfig;
-import com.charles445.simpledifficulty.handler.BlockHandler;
-import com.charles445.simpledifficulty.handler.CapabilityHandler;
-import com.charles445.simpledifficulty.handler.ConfigHandler;
-import com.charles445.simpledifficulty.handler.MiscHandler;
-import com.charles445.simpledifficulty.handler.TemperatureHandler;
-import com.charles445.simpledifficulty.handler.ThirstHandler;
-import com.charles445.simpledifficulty.temperature.ModifierAltitude;
-import com.charles445.simpledifficulty.temperature.ModifierArmor;
-import com.charles445.simpledifficulty.temperature.ModifierBiome;
-import com.charles445.simpledifficulty.temperature.ModifierBlocksTiles;
-import com.charles445.simpledifficulty.temperature.ModifierDefault;
-import com.charles445.simpledifficulty.temperature.ModifierDimension;
-import com.charles445.simpledifficulty.temperature.ModifierHeldItems;
-import com.charles445.simpledifficulty.temperature.ModifierSnow;
-import com.charles445.simpledifficulty.temperature.ModifierSprint;
-import com.charles445.simpledifficulty.temperature.ModifierTemporary;
-import com.charles445.simpledifficulty.temperature.ModifierTime;
-import com.charles445.simpledifficulty.temperature.ModifierWet;
+import com.charles445.simpledifficulty.handler.*;
+import com.charles445.simpledifficulty.temperature.*;
 import com.charles445.simpledifficulty.util.internal.TemperatureUtilInternal;
 import com.charles445.simpledifficulty.util.internal.ThirstUtilInternal;
-
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -65,7 +48,8 @@ public abstract class CommonProxy implements IProxy
 		MinecraftForge.EVENT_BUS.register(new MiscHandler());
 		MinecraftForge.EVENT_BUS.register(new TemperatureHandler());
 		MinecraftForge.EVENT_BUS.register(new ThirstHandler());
-		
+		MinecraftForge.EVENT_BUS.register(new FluidHandler());
+
 		//Populate TemperatureRegistry
 		TemperatureRegistry.registerModifier(new ModifierDefault());
 		TemperatureRegistry.registerModifier(new ModifierAltitude());
