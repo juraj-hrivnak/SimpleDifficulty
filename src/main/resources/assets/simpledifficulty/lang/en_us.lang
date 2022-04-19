@@ -77,9 +77,10 @@ splash_potion.effect.long_heat_resist_type=Splash Potion of Heat Resistance
 tile.simpledifficulty:campfire.name=Campfire
 tile.simpledifficulty:chiller.name=Chiller
 tile.simpledifficulty:heater.name=Heater
-tile.simpledifficulty:purifiedwater.name=Regular Water
 tile.simpledifficulty:rain_collector.name=Rain Collector
 tile.simpledifficulty:spit.name=Campfire Spit
+tile.simpledifficulty:purifiedwater.name=Regular Water
+tile.simpledifficulty:saltwater.name=Salt Water
 
 tipped_arrow.effect.cold_resist_type=Arrow of Cold Resistance
 tipped_arrow.effect.long_cold_resist_type=Arrow of Cold Resistance
