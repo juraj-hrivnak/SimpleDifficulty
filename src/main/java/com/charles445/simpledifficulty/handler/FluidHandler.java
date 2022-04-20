@@ -29,10 +29,10 @@ public class FluidHandler {
 
     public static boolean canMix(BlockPos pos, World world) {
         if (
-                !world.isAreaLoaded(pos.north(32), 1)
-                        || !world.isAreaLoaded(pos.east(32), 1)
-                        || !world.isAreaLoaded(pos.south(32), 1)
-                        || !world.isAreaLoaded(pos.west(32), 1)
+                !world.isBlockLoaded(pos.north(32))
+                        || !world.isBlockLoaded(pos.east(32))
+                        || !world.isBlockLoaded(pos.south(32))
+                        || !world.isBlockLoaded(pos.west(32))
         ) return false;
 
         Block downBlock = (world.getBlockState(pos.down()).getBlock());
@@ -67,7 +67,7 @@ public class FluidHandler {
     }
 
     public void checkAndMixBlock(BlockPos pos, World world) {
-        if (canMix(pos, world) && world.isAreaLoaded(pos, 1)) {
+        if (canMix(pos, world) && world.isBlockLoaded(pos)) {
             world.setBlockState(pos, SDFluids.blockSaltWater.getDefaultState());
         }
     }

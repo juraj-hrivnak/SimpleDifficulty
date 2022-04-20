@@ -5,9 +5,7 @@ import com.charles445.simpledifficulty.api.config.ServerOptions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.Fluid;
 
@@ -26,7 +24,7 @@ public class BlockFluidBasicMixable extends BlockFluidBasic {
     @Override
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		if (!worldIn.isRemote) {
-			if (!worldIn.isAreaLoaded(pos, 1)) return;
+			if (!worldIn.isBlockLoaded(pos)) return;
 			if (canMix(pos, worldIn)) {
 				scheduleMixing(worldIn, pos);
 			}
@@ -36,7 +34,7 @@ public class BlockFluidBasicMixable extends BlockFluidBasic {
 	@Override
 	public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos neighbourPos) {
 		world.scheduleUpdate(pos, this, tickRate);
-		if (!world.isAreaLoaded(pos, 1)) return;
+		if (!world.isBlockLoaded(pos)) return;
 		if (canMix(pos, world)) {
 			scheduleMixing(world, pos);
 		}
