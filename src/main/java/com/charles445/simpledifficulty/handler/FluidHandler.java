@@ -14,7 +14,7 @@ import java.util.List;
 
 public class FluidHandler {
 
-    public static final int MIX_TIME = -10;
+    public static final int MIX_TIME = -5;
     public static List<Entry> scheduledMixtures = new ArrayList<>();
 
     public static void scheduleMixing(World world, BlockPos pos) {
