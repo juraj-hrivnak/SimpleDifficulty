@@ -17,12 +17,11 @@ import javax.annotation.Nonnull;
 public class FluidBasic extends Fluid implements ICompatibleFluid
 {
 
-	public FluidBasic(String fluidName, String still, String flowing, int ARGB)
+	public FluidBasic(String fluidName, String still, String flowing)
 	{
 		super(fluidName, 
 			new ResourceLocation(SimpleDifficulty.MODID, "fluids/"+still),
-			new ResourceLocation(SimpleDifficulty.MODID, "fluids/"+flowing),
-			ARGB
+			new ResourceLocation(SimpleDifficulty.MODID, "fluids/"+flowing)
 		);
 		
 		//Add to generic fluid map

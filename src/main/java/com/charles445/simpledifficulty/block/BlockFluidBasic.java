@@ -60,7 +60,7 @@ public class BlockFluidBasic extends BlockFluidClassic
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Vec3d getFogColor(World world, BlockPos pos, IBlockState state, Entity entity, Vec3d originalColor, float partialTicks) {
-		return super.getFogColor(world, pos, Blocks.WATER.getDefaultState(), entity, originalColor, partialTicks);
+		return Blocks.WATER.getFogColor(world, pos, state, entity, originalColor, partialTicks);
 	}
 
 	@Override

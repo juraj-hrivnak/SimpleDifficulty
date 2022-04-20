@@ -43,14 +43,12 @@ public class RegisterFluids
 			purifiedWater = new FluidBasic(
 					"purifiedwater",
 					"purifiedwater_still",
-					"purifiedwater_flow",
-					0xFFFFFFFF
+					"purifiedwater_flow"
 			);
 			saltWater = new FluidBasic(
 					"saltwater",
 					"saltwater_still",
-					"saltwater_flow",
-					0xFFFFFFFF
+					"saltwater_flow"
 			);
 
 			//Fluids register themselves

@@ -5,7 +5,9 @@ import com.charles445.simpledifficulty.api.config.ServerOptions;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.Fluid;
 
@@ -21,7 +23,7 @@ public class BlockFluidBasicMixable extends BlockFluidBasic {
 		setTickRandomly(true);
 	}
 
-	@Override
+    @Override
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		if (!worldIn.isRemote) {
 			if (!worldIn.isAreaLoaded(pos, 1)) return;
