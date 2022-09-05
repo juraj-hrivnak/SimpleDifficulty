@@ -14,15 +14,17 @@ import java.util.Random;
 import static com.charles445.simpledifficulty.handler.FluidHandler.canMix;
 import static com.charles445.simpledifficulty.handler.FluidHandler.scheduleMixing;
 
-public class BlockFluidBasicMixable extends BlockFluidBasic {
-
-	public BlockFluidBasicMixable(Fluid fluid, Material material) {
+public class BlockFluidBasicMixable extends BlockFluidBasic
+{
+	public BlockFluidBasicMixable(Fluid fluid, Material material)
+	{
 		super(fluid, material);
 		setTickRandomly(true);
 	}
 
     @Override
-	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
+	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random)
+	{
 		if (!worldIn.isRemote) {
 			if (!worldIn.isBlockLoaded(pos)) return;
 			if (canMix(pos, worldIn)) {
@@ -32,25 +34,30 @@ public class BlockFluidBasicMixable extends BlockFluidBasic {
 	}
 
 	@Override
-	public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos neighbourPos) {
+	public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos neighbourPos)
+	{
 		world.scheduleUpdate(pos, this, tickRate);
 		if (!world.isBlockLoaded(pos)) return;
-		if (canMix(pos, world)) {
+		if (canMix(pos, world))
+		{
 			scheduleMixing(world, pos);
 		}
 	}
 
 	@Override
-	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+	public void onBlockAdded(World world, BlockPos pos, IBlockState state)
+	{
 		world.scheduleUpdate(pos, this, tickRate);
-		if (canMix(pos, world)) {
+		if (canMix(pos, world))
+		{
 			scheduleMixing(world, pos);
 		}
 	}
 
 	@Override
 	@SuppressWarnings("deprecation")
-	public int getLightOpacity(IBlockState state) {
+	public int getLightOpacity(IBlockState state)
+	{
 		return ServerConfig.instance.getBoolean(ServerOptions.PURIFIED_WATER_OPACITY) ? 2 : 3;
 	}
 }

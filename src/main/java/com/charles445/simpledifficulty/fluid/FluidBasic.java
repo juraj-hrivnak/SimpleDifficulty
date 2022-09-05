@@ -2,9 +2,7 @@ package com.charles445.simpledifficulty.fluid;
 
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDFluids;
-
 import git.jbredwards.fluidlogged_api.api.fluid.ICompatibleFluid;
-
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -16,10 +14,9 @@ import javax.annotation.Nonnull;
 @Optional.Interface(iface = "git.jbredwards.fluidlogged_api.api.fluid.ICompatibleFluid", modid = "fluidlogged_api")
 public class FluidBasic extends Fluid implements ICompatibleFluid
 {
-
 	public FluidBasic(String fluidName, String still, String flowing)
 	{
-		super(fluidName, 
+		super(fluidName,
 			new ResourceLocation(SimpleDifficulty.MODID, "fluids/"+still),
 			new ResourceLocation(SimpleDifficulty.MODID, "fluids/"+flowing)
 		);
@@ -35,7 +32,8 @@ public class FluidBasic extends Fluid implements ICompatibleFluid
 	@Nonnull
 	@Override
 	@Optional.Method(modid = "fluidlogged_api")
-	public Fluid getParentFluid() {
+	public Fluid getParentFluid()
+	{
 		return FluidRegistry.WATER;
 	}
 }
