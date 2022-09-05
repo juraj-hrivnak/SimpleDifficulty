@@ -70,7 +70,7 @@ public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggable
 	@SideOnly(Side.CLIENT)
 	public Vec3d getFogColor(World world, BlockPos pos, IBlockState state, Entity entity, Vec3d originalColor, float partialTicks)
 	{
-		int biomeWaterColor = BiomeColorHelper.getWaterColorAtPos(world, pos) * 2;
+		int biomeWaterColor = BiomeColorHelper.getWaterColorAtPos(world, pos);
 		Vec3d waterBlockColor = Blocks.WATER.getFogColor(world, pos, Blocks.WATER.getDefaultState(), entity, originalColor, partialTicks);
 
 		float red = (biomeWaterColor >> 16 & 0xFF) / 1655.0F;
