@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         maven { url = "https://files.minecraftforge.net/maven" }
     }
     dependencies {
@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 
-version = "1.12.2-0.5"
+version = "1.12.2-0.5.2"
 group = "com.charles445.simpledifficulty" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "SimpleDifficulty"
 
@@ -29,11 +29,11 @@ minecraft {
 repositories {
     mavenCentral()
     maven {
-        name = "curseforge"
+        name = "CurseForge"
         url "https://www.cursemaven.com"
     }
     maven {
-        name = "fluidlogged-api"
+        name = "Fluidlogged API"
         url 'https://jitpack.io'
     }
 }
@@ -43,7 +43,7 @@ dependencies {
     deobfCompile "curse.maven:farseek-229708:3093852"
 
     // Fluidlogged API
-    compileOnly 'com.github.jbredwards:fluidlogged-api:ccf9bba5ec'
+    compileOnly 'com.github.jbredwards:fluidlogged-api:a51037976d'
 }
 
 processResources{
