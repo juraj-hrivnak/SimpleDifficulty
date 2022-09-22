@@ -31,6 +31,9 @@ public class PotionHypothermia extends PotionThermia
 	@Override
 	public void attackPlayer(EntityPlayer player, float damage)
 	{
-		player.attackEntityFrom(SDDamageSources.HYPOTHERMIA, damage);
+		if (player.getHealth() > 1.0F)
+		{
+			player.attackEntityFrom(SDDamageSources.HYPOTHERMIA, damage);
+		}
 	}
 }
