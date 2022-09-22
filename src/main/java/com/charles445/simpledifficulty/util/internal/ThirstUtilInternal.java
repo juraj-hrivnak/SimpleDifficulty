@@ -124,9 +124,11 @@ public class ThirstUtilInternal implements IThirstUtil
 		}
 		int i;
 		String x;
-		for (i = 0; i < riverBlocks.length; i++) {
+		for (i = 0; i < riverBlocks.length; i++)
+		{
 			x = riverBlocks[i];
-			if (traceBlock == REGISTRY.getObject(new ResourceLocation("streams", x))) {
+			if (traceBlock == REGISTRY.getObject(new ResourceLocation("streams", x)))
+			{
 				return new ThirstEnumBlockPos(ThirstEnum.NORMAL, trace.getBlockPos());
 			}
 		}

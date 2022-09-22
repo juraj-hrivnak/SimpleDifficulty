@@ -27,7 +27,8 @@ public class BlockFluidBasicMixable extends BlockFluidBasic
 	{
 		if (!worldIn.isRemote) {
 			if (!worldIn.isBlockLoaded(pos)) return;
-			if (canMix(pos, worldIn)) {
+			if (canMix(pos, worldIn))
+			{
 				scheduleMixing(worldIn, pos);
 			}
 		}
@@ -55,9 +56,8 @@ public class BlockFluidBasicMixable extends BlockFluidBasic
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
 	public int getLightOpacity(IBlockState state)
 	{
-		return ServerConfig.instance.getBoolean(ServerOptions.PURIFIED_WATER_OPACITY) ? 2 : 3;
+		return ServerConfig.instance.getBoolean(ServerOptions.PURIFIED_WATER_OPACITY) ? 1 : 3;
 	}
 }
