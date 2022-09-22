@@ -3,7 +3,6 @@ package com.charles445.simpledifficulty.handler;
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.config.JsonConfigInternal;
 import com.charles445.simpledifficulty.config.ModConfig;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.text.TextComponentString;

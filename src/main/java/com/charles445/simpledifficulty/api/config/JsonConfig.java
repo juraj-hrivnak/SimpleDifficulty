@@ -1,20 +1,13 @@
 package com.charles445.simpledifficulty.api.config;
 
+import com.charles445.simpledifficulty.api.config.json.*;
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.charles445.simpledifficulty.api.config.json.JsonConsumableTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonConsumableThirst;
-import com.charles445.simpledifficulty.api.config.json.JsonItemIdentity;
-import com.charles445.simpledifficulty.api.config.json.JsonPropertyTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonPropertyValue;
-import com.charles445.simpledifficulty.api.config.json.JsonTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonTemperatureIdentity;
-
-import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
 
 public class JsonConfig
 {

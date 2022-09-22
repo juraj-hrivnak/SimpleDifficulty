@@ -1,7 +1,6 @@
 package com.charles445.simpledifficulty.register;
 
 import com.charles445.simpledifficulty.api.SDItems;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 

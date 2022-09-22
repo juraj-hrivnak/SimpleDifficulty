@@ -5,7 +5,6 @@ import com.charles445.simpledifficulty.api.thirst.ThirstEnumBlockPos;
 import com.charles445.simpledifficulty.api.thirst.ThirstUtil;
 import com.charles445.simpledifficulty.util.SoundUtil;
 import com.charles445.simpledifficulty.util.internal.ThirstUtilInternal;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;

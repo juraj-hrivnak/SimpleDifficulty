@@ -1,23 +1,16 @@
 package com.charles445.simpledifficulty.capability;
 
-import javax.vecmath.Vector3d;
-
-import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.SDDamageSources;
-import com.charles445.simpledifficulty.api.config.ServerConfig;
-import com.charles445.simpledifficulty.api.config.ServerOptions;
 import com.charles445.simpledifficulty.api.thirst.IThirstCapability;
 import com.charles445.simpledifficulty.config.ModConfig;
-import com.charles445.simpledifficulty.debug.DebugUtil;
 import com.charles445.simpledifficulty.util.DamageUtil;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+
+import javax.vecmath.Vector3d;
 
 public class ThirstCapability implements IThirstCapability
 {

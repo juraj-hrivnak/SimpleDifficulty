@@ -3,12 +3,8 @@ package com.charles445.simpledifficulty.potion;
 import com.charles445.simpledifficulty.api.SDDamageSources;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.DamageUtil;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 

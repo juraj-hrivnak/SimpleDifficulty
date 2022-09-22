@@ -5,8 +5,6 @@ import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
 import com.charles445.simpledifficulty.api.item.IItemCanteen;
 import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
-import com.charles445.simpledifficulty.config.json.ExtraItem;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemStack;

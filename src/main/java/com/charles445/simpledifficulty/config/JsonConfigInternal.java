@@ -1,29 +1,10 @@
 package com.charles445.simpledifficulty.config;
 
-import java.io.File;
-import java.io.FileReader;
-import java.lang.reflect.Modifier;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Nullable;
-
-import org.apache.commons.io.FileUtils;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDBlocks;
 import com.charles445.simpledifficulty.api.SDItems;
 import com.charles445.simpledifficulty.api.config.JsonConfig;
-import com.charles445.simpledifficulty.api.config.json.JsonConsumableTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonConsumableThirst;
-import com.charles445.simpledifficulty.api.config.json.JsonItemIdentity;
-import com.charles445.simpledifficulty.api.config.json.JsonPropertyTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonPropertyValue;
-import com.charles445.simpledifficulty.api.config.json.JsonTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonTemperatureIdentity;
+import com.charles445.simpledifficulty.api.config.json.*;
 import com.charles445.simpledifficulty.api.config.json.migrate.JsonConsumableTemperatureMigrate;
 import com.charles445.simpledifficulty.api.config.json.migrate.JsonConsumableThirstMigrate;
 import com.charles445.simpledifficulty.api.config.json.migrate.JsonTemperatureMetadataMigrate;
@@ -35,10 +16,20 @@ import com.charles445.simpledifficulty.item.ItemJuice.JuiceEnum;
 import com.charles445.simpledifficulty.register.ExtraItemNames;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import org.apache.commons.io.FileUtils;
+
+import javax.annotation.Nullable;
+import java.io.File;
+import java.io.FileReader;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class JsonConfigInternal
 {

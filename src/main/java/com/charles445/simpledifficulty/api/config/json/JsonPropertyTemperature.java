@@ -1,14 +1,13 @@
 package com.charles445.simpledifficulty.api.config.json;
 
+import com.google.gson.annotations.SerializedName;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.IBlockState;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.google.gson.annotations.SerializedName;
-
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.state.IBlockState;
 
 public class JsonPropertyTemperature
 {

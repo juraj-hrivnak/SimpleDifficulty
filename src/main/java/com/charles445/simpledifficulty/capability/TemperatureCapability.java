@@ -1,28 +1,21 @@
 package com.charles445.simpledifficulty.capability;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.charles445.simpledifficulty.api.SDPotions;
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
-import com.charles445.simpledifficulty.api.temperature.ITemperatureCapability;
-import com.charles445.simpledifficulty.api.temperature.ITemperatureDynamicModifier;
-import com.charles445.simpledifficulty.api.temperature.ITemperatureModifier;
-import com.charles445.simpledifficulty.api.temperature.TemperatureEnum;
-import com.charles445.simpledifficulty.api.temperature.TemperatureRegistry;
-import com.charles445.simpledifficulty.api.temperature.TemperatureUtil;
-import com.charles445.simpledifficulty.api.temperature.TemporaryModifier;
+import com.charles445.simpledifficulty.api.temperature.*;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.debug.DebugUtil;
 import com.charles445.simpledifficulty.util.WorldUtil;
 import com.google.common.collect.ImmutableMap;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TemperatureCapability implements ITemperatureCapability
 {

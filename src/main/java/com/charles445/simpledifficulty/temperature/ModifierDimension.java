@@ -2,7 +2,6 @@ package com.charles445.simpledifficulty.temperature;
 
 import com.charles445.simpledifficulty.api.config.JsonConfig;
 import com.charles445.simpledifficulty.api.config.json.JsonTemperature;
-
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 

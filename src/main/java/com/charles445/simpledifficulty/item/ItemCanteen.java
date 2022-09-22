@@ -1,9 +1,5 @@
 package com.charles445.simpledifficulty.item;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.config.QuickConfig;
@@ -14,9 +10,7 @@ import com.charles445.simpledifficulty.api.thirst.IThirstCapability;
 import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
 import com.charles445.simpledifficulty.api.thirst.ThirstEnumBlockPos;
 import com.charles445.simpledifficulty.api.thirst.ThirstUtil;
-import com.charles445.simpledifficulty.register.crafting.CanteenCharcoalRecipe;
 import com.charles445.simpledifficulty.util.SoundUtil;
-
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
@@ -33,6 +27,9 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class ItemCanteen extends ItemDrinkBase implements IItemCanteen
 {

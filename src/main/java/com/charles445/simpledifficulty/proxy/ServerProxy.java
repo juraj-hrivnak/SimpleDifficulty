@@ -1,9 +1,5 @@
 package com.charles445.simpledifficulty.proxy;
 
-import java.io.File;
-
-import com.charles445.simpledifficulty.SimpleDifficulty;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.relauncher.Side;
 

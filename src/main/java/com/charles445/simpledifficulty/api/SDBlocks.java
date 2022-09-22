@@ -1,9 +1,9 @@
 package com.charles445.simpledifficulty.api;
 
+import net.minecraft.block.Block;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import net.minecraft.block.Block;
 
 public class SDBlocks
 {

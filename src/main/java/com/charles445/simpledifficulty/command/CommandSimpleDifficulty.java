@@ -1,12 +1,5 @@
 package com.charles445.simpledifficulty.command;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
-
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.config.JsonConfig;
@@ -15,7 +8,6 @@ import com.charles445.simpledifficulty.api.temperature.ITemperatureCapability;
 import com.charles445.simpledifficulty.api.thirst.IThirstCapability;
 import com.charles445.simpledifficulty.config.JsonConfigInternal;
 import com.charles445.simpledifficulty.config.JsonFileName;
-
 import net.minecraft.block.Block;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -33,6 +25,12 @@ import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
+
+import javax.annotation.Nullable;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
 
 public class CommandSimpleDifficulty extends CommandBase
 {

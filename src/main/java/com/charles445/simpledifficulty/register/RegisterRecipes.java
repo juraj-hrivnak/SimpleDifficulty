@@ -4,7 +4,6 @@ import com.charles445.simpledifficulty.api.SDFluids;
 import com.charles445.simpledifficulty.api.SDItems;
 import com.charles445.simpledifficulty.api.SDPotions;
 import com.charles445.simpledifficulty.register.crafting.FixedBrewingOreRecipe;
-
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.item.Item;

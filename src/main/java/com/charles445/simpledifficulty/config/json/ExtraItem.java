@@ -1,9 +1,8 @@
 package com.charles445.simpledifficulty.config.json;
 
+import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.annotation.Nullable;
 
 public class ExtraItem
 {

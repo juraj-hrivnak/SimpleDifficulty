@@ -1,9 +1,9 @@
 package com.charles445.simpledifficulty.api.config.json;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
+import javax.annotation.Nullable;
 
 public class JsonTemperatureIdentity
 {

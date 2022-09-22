@@ -1,7 +1,5 @@
 package com.charles445.simpledifficulty.handler;
 
-import java.util.List;
-
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.SDPotions;
 import com.charles445.simpledifficulty.api.config.JsonConfig;
@@ -17,7 +15,6 @@ import com.charles445.simpledifficulty.network.MessageDrinkWater;
 import com.charles445.simpledifficulty.network.PacketHandler;
 import com.charles445.simpledifficulty.util.SoundUtil;
 import com.charles445.simpledifficulty.util.internal.ThirstUtilInternal;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -39,6 +36,8 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.List;
 
 public class ThirstHandler
 {

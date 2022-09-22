@@ -1,12 +1,11 @@
 package com.charles445.simpledifficulty.temperature;
 
-import java.util.List;
-
 import com.charles445.simpledifficulty.api.config.JsonConfig;
 import com.charles445.simpledifficulty.api.config.json.JsonTemperatureIdentity;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+
+import java.util.List;
 
 public class ModifierHeldItems extends ModifierBase
 {

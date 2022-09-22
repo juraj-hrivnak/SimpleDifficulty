@@ -2,7 +2,6 @@ package com.charles445.simpledifficulty.handler;
 
 import com.charles445.simpledifficulty.api.SDItems;
 import com.charles445.simpledifficulty.config.ModConfig;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;

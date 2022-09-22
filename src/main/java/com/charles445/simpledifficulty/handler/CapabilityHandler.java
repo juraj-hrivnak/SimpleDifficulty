@@ -11,14 +11,12 @@ import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.network.MessageUpdateTemperature;
 import com.charles445.simpledifficulty.network.MessageUpdateThirst;
 import com.charles445.simpledifficulty.network.PacketHandler;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent.Clone;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;

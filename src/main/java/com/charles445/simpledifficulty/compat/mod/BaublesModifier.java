@@ -1,18 +1,17 @@
 package com.charles445.simpledifficulty.compat.mod;
 
-import java.lang.reflect.Method;
-import java.util.List;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.config.JsonConfig;
 import com.charles445.simpledifficulty.api.config.json.JsonTemperatureIdentity;
 import com.charles445.simpledifficulty.api.temperature.TemperatureUtil;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.temperature.ModifierBase;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+
+import java.lang.reflect.Method;
+import java.util.List;
 
 public class BaublesModifier extends ModifierBase
 {

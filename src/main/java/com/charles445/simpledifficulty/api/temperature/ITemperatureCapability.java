@@ -1,7 +1,6 @@
 package com.charles445.simpledifficulty.api.temperature;
 
 import com.google.common.collect.ImmutableMap;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.gameevent.TickEvent;

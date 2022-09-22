@@ -1,12 +1,7 @@
 package com.charles445.simpledifficulty.block;
 
-import java.util.Random;
-
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.api.SDBlocks;
 import com.charles445.simpledifficulty.tileentity.TileEntitySpit;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
@@ -26,6 +21,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
+import java.util.Random;
 
 public class BlockSpit extends BlockContainer
 {

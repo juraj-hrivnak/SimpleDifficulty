@@ -2,7 +2,6 @@ package com.charles445.simpledifficulty.item;
 
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.config.ModConfig;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;

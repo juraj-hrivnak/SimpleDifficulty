@@ -5,7 +5,6 @@ import com.charles445.simpledifficulty.api.config.ClientConfig;
 import com.charles445.simpledifficulty.api.config.ClientOptions;
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.text.TextComponentString;

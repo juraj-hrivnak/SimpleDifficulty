@@ -1,20 +1,13 @@
 package com.charles445.simpledifficulty.util.internal;
 
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.SDFluids;
 import com.charles445.simpledifficulty.api.SDPotions;
 import com.charles445.simpledifficulty.api.config.QuickConfig;
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
-import com.charles445.simpledifficulty.api.thirst.IThirstCapability;
-import com.charles445.simpledifficulty.api.thirst.IThirstUtil;
-import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
-import com.charles445.simpledifficulty.api.thirst.ThirstEnumBlockPos;
-import com.charles445.simpledifficulty.api.thirst.ThirstUtil;
+import com.charles445.simpledifficulty.api.thirst.*;
 import com.charles445.simpledifficulty.config.ModConfig;
-
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -27,6 +20,8 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
+
+import javax.annotation.Nullable;
 
 import static net.minecraft.block.Block.REGISTRY;
 

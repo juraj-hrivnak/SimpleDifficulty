@@ -5,7 +5,6 @@ import com.charles445.simpledifficulty.api.SDBlocks;
 import com.charles445.simpledifficulty.api.SDFluids;
 import com.charles445.simpledifficulty.api.SDItems;
 import com.charles445.simpledifficulty.block.IBlockStateIgnore;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.ItemMeshDefinition;

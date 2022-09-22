@@ -1,7 +1,6 @@
 package com.charles445.simpledifficulty.network;
 
 import com.charles445.simpledifficulty.SimpleDifficulty;
-
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;

@@ -1,13 +1,10 @@
 package com.charles445.simpledifficulty.register.crafting;
 
-import javax.annotation.Nonnull;
-
 import com.charles445.simpledifficulty.api.SDItems;
 import com.charles445.simpledifficulty.api.item.IItemCanteen;
 import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
 import com.charles445.simpledifficulty.item.ItemCanteen;
 import com.google.gson.JsonObject;
-
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -19,6 +16,8 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.crafting.IRecipeFactory;
 import net.minecraftforge.common.crafting.JsonContext;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+
+import javax.annotation.Nonnull;
 
 public class CanteenCharcoalRecipe extends ShapelessOreRecipe
 {

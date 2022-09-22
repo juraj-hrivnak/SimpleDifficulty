@@ -1,14 +1,9 @@
 package com.charles445.simpledifficulty.block;
 
-import java.util.Random;
-
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.api.SDBlocks;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.OreDictUtil;
 import com.charles445.simpledifficulty.util.SoundUtil;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -26,17 +21,16 @@ import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
+import java.util.Random;
 
 public class BlockCampfire extends Block implements IBlockStateIgnore
 {

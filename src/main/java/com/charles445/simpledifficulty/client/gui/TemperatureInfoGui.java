@@ -1,19 +1,12 @@
 package com.charles445.simpledifficulty.client.gui;
 
-import java.util.Map;
-import java.util.TreeMap;
-
-import com.charles445.simpledifficulty.api.config.ClientConfig;
-import com.charles445.simpledifficulty.api.config.ClientOptions;
 import com.charles445.simpledifficulty.api.config.QuickConfig;
 import com.charles445.simpledifficulty.api.temperature.ITemperatureDynamicModifier;
 import com.charles445.simpledifficulty.api.temperature.ITemperatureModifier;
-import com.charles445.simpledifficulty.api.temperature.TemperatureEnum;
 import com.charles445.simpledifficulty.api.temperature.TemperatureRegistry;
 import com.charles445.simpledifficulty.api.temperature.TemperatureUtil;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.WorldUtil;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
@@ -24,6 +17,9 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+
+import java.util.Map;
+import java.util.TreeMap;
 
 public class TemperatureInfoGui
 {

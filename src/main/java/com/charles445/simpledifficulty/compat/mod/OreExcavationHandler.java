@@ -1,18 +1,16 @@
 package com.charles445.simpledifficulty.compat.mod;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.config.QuickConfig;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.CompatUtil;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 public class OreExcavationHandler
 {

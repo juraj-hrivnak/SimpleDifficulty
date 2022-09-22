@@ -3,7 +3,6 @@ package com.charles445.simpledifficulty.temperature;
 import com.charles445.simpledifficulty.api.config.JsonConfig;
 import com.charles445.simpledifficulty.api.config.json.JsonTemperature;
 import com.charles445.simpledifficulty.config.ModConfig;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

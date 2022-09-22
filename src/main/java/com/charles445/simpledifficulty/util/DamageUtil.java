@@ -2,7 +2,6 @@ package com.charles445.simpledifficulty.util;
 
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;

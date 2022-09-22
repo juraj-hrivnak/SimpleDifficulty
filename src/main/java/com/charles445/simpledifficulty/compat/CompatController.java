@@ -1,12 +1,12 @@
 package com.charles445.simpledifficulty.compat;
 
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.temperature.ITemperatureDynamicModifier;
 import com.charles445.simpledifficulty.api.temperature.ITemperatureModifier;
 import com.charles445.simpledifficulty.api.temperature.TemperatureRegistry;
 import com.charles445.simpledifficulty.util.CompatUtil;
+
+import javax.annotation.Nullable;
 
 public class CompatController
 {

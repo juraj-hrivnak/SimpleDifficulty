@@ -1,9 +1,9 @@
 package com.charles445.simpledifficulty.api;
 
+import net.minecraft.enchantment.Enchantment;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import net.minecraft.enchantment.Enchantment;
 
 public class SDEnchantments
 {

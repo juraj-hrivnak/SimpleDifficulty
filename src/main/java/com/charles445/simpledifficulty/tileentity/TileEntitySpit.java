@@ -4,7 +4,6 @@ import com.charles445.simpledifficulty.api.SDBlocks;
 import com.charles445.simpledifficulty.block.BlockCampfire;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.SoundUtil;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityXPOrb;

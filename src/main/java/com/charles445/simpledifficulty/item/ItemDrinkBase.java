@@ -1,14 +1,11 @@
 package com.charles445.simpledifficulty.item;
 
-import java.util.List;
-
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.config.JsonConfig;
 import com.charles445.simpledifficulty.api.config.QuickConfig;
 import com.charles445.simpledifficulty.api.config.json.JsonConsumableThirst;
 import com.charles445.simpledifficulty.api.thirst.IThirstCapability;
 import com.charles445.simpledifficulty.api.thirst.ThirstUtil;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -19,6 +16,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public abstract class ItemDrinkBase extends Item
 {

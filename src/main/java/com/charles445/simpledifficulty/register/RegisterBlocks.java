@@ -1,7 +1,5 @@
 package com.charles445.simpledifficulty.register;
 
-import static com.charles445.simpledifficulty.api.SDBlocks.*;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDBlocks;
 import com.charles445.simpledifficulty.block.BlockCampfire;
@@ -10,7 +8,6 @@ import com.charles445.simpledifficulty.block.BlockSpit;
 import com.charles445.simpledifficulty.block.BlockTemperature;
 import com.charles445.simpledifficulty.tileentity.TileEntitySpit;
 import com.charles445.simpledifficulty.tileentity.TileEntityTemperature;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -20,6 +17,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
+
+import static com.charles445.simpledifficulty.api.SDBlocks.*;
 
 public class RegisterBlocks
 {

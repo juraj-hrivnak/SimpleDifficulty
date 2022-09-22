@@ -1,8 +1,6 @@
 package com.charles445.simpledifficulty.potion;
 
 import com.charles445.simpledifficulty.api.SDPotions;
-import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 

@@ -1,12 +1,10 @@
 package com.charles445.simpledifficulty.proxy;
 
-import java.io.File;
-
-import javax.annotation.Nullable;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
+
+import javax.annotation.Nullable;
 
 public interface IProxy 
 {

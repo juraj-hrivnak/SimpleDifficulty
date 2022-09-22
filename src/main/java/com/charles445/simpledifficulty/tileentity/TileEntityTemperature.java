@@ -6,7 +6,6 @@ import com.charles445.simpledifficulty.api.temperature.ITemperatureTileEntity;
 import com.charles445.simpledifficulty.block.BlockTemperature;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.WorldUtil;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;

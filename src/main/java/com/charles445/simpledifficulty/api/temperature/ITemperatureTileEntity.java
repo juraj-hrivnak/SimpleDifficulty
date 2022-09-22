@@ -1,7 +1,6 @@
 package com.charles445.simpledifficulty.api.temperature;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 public interface ITemperatureTileEntity
 {

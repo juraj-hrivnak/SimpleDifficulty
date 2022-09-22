@@ -1,15 +1,13 @@
 package com.charles445.simpledifficulty.util;
 
-import java.lang.reflect.Method;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDCompatibility;
-
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
+
+import java.lang.reflect.Method;
 
 public class CompatUtil
 {

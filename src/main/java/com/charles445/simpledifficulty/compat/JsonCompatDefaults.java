@@ -1,18 +1,16 @@
 package com.charles445.simpledifficulty.compat;
 
-import static com.charles445.simpledifficulty.compat.ModNames.*;
-
 import com.charles445.simpledifficulty.api.SDCompatibility;
 import com.charles445.simpledifficulty.api.config.JsonConfig;
 import com.charles445.simpledifficulty.api.config.json.JsonItemIdentity;
 import com.charles445.simpledifficulty.api.config.json.JsonPropertyTemperature;
 import com.charles445.simpledifficulty.api.config.json.JsonPropertyValue;
-import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
 import com.charles445.simpledifficulty.util.CompatUtil;
 import com.charles445.simpledifficulty.util.OreDictUtil;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+
+import static com.charles445.simpledifficulty.compat.ModNames.*;
 
 public class JsonCompatDefaults
 {

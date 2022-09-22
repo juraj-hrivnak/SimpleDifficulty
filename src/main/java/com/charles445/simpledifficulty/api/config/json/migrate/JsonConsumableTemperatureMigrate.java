@@ -1,8 +1,8 @@
 package com.charles445.simpledifficulty.api.config.json.migrate;
 
-import java.util.Locale;
-
 import net.minecraft.item.ItemStack;
+
+import java.util.Locale;
 
 public class JsonConsumableTemperatureMigrate
 {

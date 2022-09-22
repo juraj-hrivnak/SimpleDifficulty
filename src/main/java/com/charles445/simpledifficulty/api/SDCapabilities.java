@@ -2,7 +2,6 @@ package com.charles445.simpledifficulty.api;
 
 import com.charles445.simpledifficulty.api.temperature.ITemperatureCapability;
 import com.charles445.simpledifficulty.api.thirst.IThirstCapability;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;

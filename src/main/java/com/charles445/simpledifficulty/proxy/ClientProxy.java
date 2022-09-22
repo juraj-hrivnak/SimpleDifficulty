@@ -11,7 +11,6 @@ import com.charles445.simpledifficulty.client.render.RenderSpit;
 import com.charles445.simpledifficulty.compat.CompatController;
 import com.charles445.simpledifficulty.handler.TooltipHandler;
 import com.charles445.simpledifficulty.tileentity.TileEntitySpit;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.entity.player.EntityPlayer;

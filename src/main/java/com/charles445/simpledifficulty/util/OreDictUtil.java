@@ -1,12 +1,10 @@
 package com.charles445.simpledifficulty.util;
 
-import javax.annotation.Nonnull;
-
-import com.charles445.simpledifficulty.debug.DebugUtil;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nonnull;
 
 public class OreDictUtil
 {

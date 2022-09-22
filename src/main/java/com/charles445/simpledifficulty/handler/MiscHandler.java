@@ -1,25 +1,8 @@
 package com.charles445.simpledifficulty.handler;
 
-import com.charles445.simpledifficulty.SimpleDifficulty;
-import com.charles445.simpledifficulty.api.SDItems;
-import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
-import com.charles445.simpledifficulty.api.thirst.ThirstEnumBlockPos;
-import com.charles445.simpledifficulty.api.thirst.ThirstUtil;
-import com.charles445.simpledifficulty.config.ModConfig;
-
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumHand;
-import net.minecraft.world.World;
-import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.entity.EntityMountEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
 public class MiscHandler
 {

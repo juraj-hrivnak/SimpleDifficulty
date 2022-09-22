@@ -2,9 +2,7 @@ package com.charles445.simpledifficulty.potion;
 
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.thirst.IThirstCapability;
-import com.charles445.simpledifficulty.capability.ThirstCapability;
 import com.charles445.simpledifficulty.config.ModConfig;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;

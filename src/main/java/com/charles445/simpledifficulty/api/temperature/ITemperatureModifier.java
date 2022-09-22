@@ -1,7 +1,5 @@
 package com.charles445.simpledifficulty.api.temperature;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

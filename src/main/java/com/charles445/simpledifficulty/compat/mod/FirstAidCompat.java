@@ -1,16 +1,15 @@
 package com.charles445.simpledifficulty.compat.mod;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDDamageSources;
 import com.charles445.simpledifficulty.util.ReflectUtil;
 import com.charles445.simpledifficulty.util.VersionDelimiter;
-
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.util.DamageSource;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class FirstAidCompat
 {

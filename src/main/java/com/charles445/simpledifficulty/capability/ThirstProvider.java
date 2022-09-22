@@ -1,7 +1,6 @@
 package com.charles445.simpledifficulty.capability;
 
 import com.charles445.simpledifficulty.api.thirst.IThirstCapability;
-
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;

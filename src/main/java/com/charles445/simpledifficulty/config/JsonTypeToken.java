@@ -1,20 +1,16 @@
 package com.charles445.simpledifficulty.config;
 
-import java.lang.reflect.Type;
-import java.util.List;
-import java.util.Map;
-
-import com.charles445.simpledifficulty.api.config.json.JsonConsumableTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonConsumableThirst;
-import com.charles445.simpledifficulty.api.config.json.JsonPropertyTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonTemperature;
-import com.charles445.simpledifficulty.api.config.json.JsonTemperatureIdentity;
+import com.charles445.simpledifficulty.api.config.json.*;
 import com.charles445.simpledifficulty.api.config.json.migrate.JsonConsumableTemperatureMigrate;
 import com.charles445.simpledifficulty.api.config.json.migrate.JsonConsumableThirstMigrate;
 import com.charles445.simpledifficulty.api.config.json.migrate.JsonTemperatureMetadataMigrate;
 import com.charles445.simpledifficulty.config.json.ExtraItem;
 import com.charles445.simpledifficulty.config.json.MaterialTemperature;
 import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
+import java.util.Map;
 
 public class JsonTypeToken
 {

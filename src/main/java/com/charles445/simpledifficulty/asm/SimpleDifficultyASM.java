@@ -1,29 +1,17 @@
 package com.charles445.simpledifficulty.asm;
 
+import com.charles445.simpledifficulty.asm.helper.ASMHelper;
+import net.minecraft.launchwrapper.IClassTransformer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.tree.*;
+
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import javax.annotation.Nullable;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.tree.AbstractInsnNode;
-import org.objectweb.asm.tree.AnnotationNode;
-import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.FieldInsnNode;
-import org.objectweb.asm.tree.FieldNode;
-import org.objectweb.asm.tree.FrameNode;
-import org.objectweb.asm.tree.LocalVariableNode;
-import org.objectweb.asm.tree.MethodInsnNode;
-import org.objectweb.asm.tree.MethodNode;
-import org.objectweb.asm.tree.TypeInsnNode;
-
-import com.charles445.simpledifficulty.asm.helper.ASMHelper;
-
-import net.minecraft.launchwrapper.IClassTransformer;
 
 public class SimpleDifficultyASM implements IClassTransformer
 {

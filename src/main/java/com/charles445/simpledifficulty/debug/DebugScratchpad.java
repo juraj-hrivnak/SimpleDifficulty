@@ -1,7 +1,5 @@
 package com.charles445.simpledifficulty.debug;
 
-import java.lang.reflect.Method;
-
 public class DebugScratchpad
 {
 	/*

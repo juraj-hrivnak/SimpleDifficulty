@@ -1,7 +1,6 @@
 package com.charles445.simpledifficulty.potion;
 
 import com.charles445.simpledifficulty.SimpleDifficulty;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.entity.EntityLivingBase;

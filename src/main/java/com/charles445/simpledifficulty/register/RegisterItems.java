@@ -1,14 +1,10 @@
 package com.charles445.simpledifficulty.register;
 
-import static com.charles445.simpledifficulty.api.SDItems.*;
-import java.util.Map;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDItems;
 import com.charles445.simpledifficulty.config.JsonConfigInternal;
 import com.charles445.simpledifficulty.config.json.ExtraItem;
 import com.charles445.simpledifficulty.item.*;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -19,6 +15,10 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
+
+import java.util.Map;
+
+import static com.charles445.simpledifficulty.api.SDItems.*;
 
 public class RegisterItems
 {

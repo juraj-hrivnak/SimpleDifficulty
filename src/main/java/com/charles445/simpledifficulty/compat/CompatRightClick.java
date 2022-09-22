@@ -5,7 +5,6 @@ import com.charles445.simpledifficulty.api.item.IItemCanteen;
 import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
 import com.charles445.simpledifficulty.api.thirst.ThirstUtil;
 import com.charles445.simpledifficulty.util.SoundUtil;
-
 import net.minecraft.block.BlockCauldron;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;

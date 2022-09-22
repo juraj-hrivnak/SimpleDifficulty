@@ -1,17 +1,9 @@
 package com.charles445.simpledifficulty.register;
 
-import static com.charles445.simpledifficulty.api.SDPotions.*;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDPotions;
 import com.charles445.simpledifficulty.config.ModConfig;
-import com.charles445.simpledifficulty.potion.PotionHyperthermia;
-import com.charles445.simpledifficulty.potion.PotionHypothermia;
-import com.charles445.simpledifficulty.potion.PotionParasites;
-import com.charles445.simpledifficulty.potion.PotionResistCold;
-import com.charles445.simpledifficulty.potion.PotionResistHeat;
-import com.charles445.simpledifficulty.potion.PotionThirsty;
-
+import com.charles445.simpledifficulty.potion.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionType;
@@ -19,6 +11,8 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
+
+import static com.charles445.simpledifficulty.api.SDPotions.*;
 
 public class RegisterPotions
 {

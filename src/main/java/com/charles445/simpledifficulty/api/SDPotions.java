@@ -1,10 +1,10 @@
 package com.charles445.simpledifficulty.api;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionType;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class SDPotions
 {

@@ -1,12 +1,11 @@
 package com.charles445.simpledifficulty.handler;
 
-import java.text.DecimalFormat;
-
 import com.charles445.simpledifficulty.api.temperature.TemperatureUtil;
-
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.text.DecimalFormat;
 
 public class TooltipHandler
 {

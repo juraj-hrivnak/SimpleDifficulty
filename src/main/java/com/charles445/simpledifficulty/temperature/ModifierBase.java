@@ -3,7 +3,6 @@ package com.charles445.simpledifficulty.temperature;
 import com.charles445.simpledifficulty.api.temperature.ITemperatureModifier;
 import com.charles445.simpledifficulty.api.temperature.TemperatureEnum;
 import com.charles445.simpledifficulty.config.ModConfig;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;

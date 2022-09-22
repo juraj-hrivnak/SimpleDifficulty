@@ -1,9 +1,9 @@
 package com.charles445.simpledifficulty.api.thirst;
 
-import javax.annotation.Nullable;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nullable;
 
 public class ThirstUtil
 {

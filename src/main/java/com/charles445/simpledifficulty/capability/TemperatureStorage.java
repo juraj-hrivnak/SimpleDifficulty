@@ -1,17 +1,16 @@
 package com.charles445.simpledifficulty.capability;
 
-import java.util.Iterator;
-import java.util.Map;
-
 import com.charles445.simpledifficulty.api.temperature.ITemperatureCapability;
 import com.charles445.simpledifficulty.api.temperature.TemporaryModifier;
-
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.Capability.IStorage;
+
+import java.util.Iterator;
+import java.util.Map;
 
 public class TemperatureStorage implements IStorage<ITemperatureCapability>
 {

@@ -1,14 +1,10 @@
 package com.charles445.simpledifficulty.register.crafting;
 
-import java.util.Arrays;
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.brewing.AbstractBrewingRecipe;
-import net.minecraftforge.common.brewing.BrewingOreRecipe;
 import net.minecraftforge.oredict.OreDictionary;
+
+import javax.annotation.Nonnull;
 
 public class FixedBrewingOreRecipe extends AbstractBrewingRecipe<ItemStack>
 {

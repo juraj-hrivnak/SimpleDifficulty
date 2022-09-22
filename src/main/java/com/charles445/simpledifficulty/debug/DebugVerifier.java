@@ -2,11 +2,7 @@ package com.charles445.simpledifficulty.debug;
 
 
 import com.charles445.simpledifficulty.SimpleDifficulty;
-import com.charles445.simpledifficulty.api.SDBlocks;
-import com.charles445.simpledifficulty.api.SDEnchantments;
-import com.charles445.simpledifficulty.api.SDFluids;
-import com.charles445.simpledifficulty.api.SDItems;
-import com.charles445.simpledifficulty.api.SDPotions;
+import com.charles445.simpledifficulty.api.*;
 
 public class DebugVerifier
 {

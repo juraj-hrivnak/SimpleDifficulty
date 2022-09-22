@@ -1,25 +1,12 @@
 package com.charles445.simpledifficulty.item;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
-import com.charles445.simpledifficulty.api.config.ClientConfig;
-import com.charles445.simpledifficulty.api.config.ClientOptions;
 import com.charles445.simpledifficulty.api.config.QuickConfig;
 import com.charles445.simpledifficulty.api.temperature.TemperatureEnum;
-import com.charles445.simpledifficulty.api.temperature.TemperatureUtil;
 import com.charles445.simpledifficulty.config.ModConfig;
-import com.charles445.simpledifficulty.debug.DebugUtil;
 import com.charles445.simpledifficulty.util.WorldUtil;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,6 +14,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class ItemThermometer extends Item
 {

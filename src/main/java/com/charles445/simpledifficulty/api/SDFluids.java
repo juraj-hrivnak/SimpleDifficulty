@@ -1,10 +1,10 @@
 package com.charles445.simpledifficulty.api;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.Fluid;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class SDFluids 
 {

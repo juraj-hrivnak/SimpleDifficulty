@@ -1,15 +1,14 @@
 package com.charles445.simpledifficulty.client.command;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.IClientCommand;
+
+import java.util.Collections;
+import java.util.List;
 
 public abstract class ClientCommandBase implements IClientCommand
 {

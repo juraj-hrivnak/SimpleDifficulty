@@ -2,7 +2,6 @@ package com.charles445.simpledifficulty.compat.mod;
 
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.temperature.ModifierDynamicBase;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;

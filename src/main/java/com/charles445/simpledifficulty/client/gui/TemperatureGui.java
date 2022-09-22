@@ -1,11 +1,7 @@
 package com.charles445.simpledifficulty.client.gui;
 
-import java.util.Random;
-
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.SDItems;
-import com.charles445.simpledifficulty.api.config.ClientConfig;
-import com.charles445.simpledifficulty.api.config.ClientOptions;
 import com.charles445.simpledifficulty.api.config.QuickConfig;
 import com.charles445.simpledifficulty.api.temperature.ITemperatureCapability;
 import com.charles445.simpledifficulty.api.temperature.TemperatureEnum;
@@ -13,7 +9,6 @@ import com.charles445.simpledifficulty.api.temperature.TemperatureUtil;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.RenderUtil;
 import com.charles445.simpledifficulty.util.WorldUtil;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.Gui;
@@ -27,6 +22,8 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+
+import java.util.Random;
 
 public class TemperatureGui
 {

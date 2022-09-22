@@ -1,10 +1,7 @@
 package com.charles445.simpledifficulty.temperature;
 
-import java.util.Map;
-
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.temperature.TemporaryModifier;
-
 import net.minecraft.entity.player.EntityPlayer;
 
 public class ModifierTemporary extends ModifierBase

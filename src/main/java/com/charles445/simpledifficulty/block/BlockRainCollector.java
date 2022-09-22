@@ -1,16 +1,12 @@
 package com.charles445.simpledifficulty.block;
 
-import java.util.Random;
-
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.SDItems;
 import com.charles445.simpledifficulty.api.item.IItemCanteen;
 import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
 import com.charles445.simpledifficulty.api.thirst.ThirstUtil;
 import com.charles445.simpledifficulty.config.ModConfig;
-import com.charles445.simpledifficulty.item.ItemCanteen;
 import com.charles445.simpledifficulty.util.SoundUtil;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -35,6 +31,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 public class BlockRainCollector extends Block
 {

@@ -1,16 +1,9 @@
 package com.charles445.simpledifficulty.asm.helper;
 
+import org.objectweb.asm.tree.*;
+
 import java.io.Serializable;
 import java.util.Comparator;
-
-import org.objectweb.asm.tree.AbstractInsnNode;
-import org.objectweb.asm.tree.FieldInsnNode;
-import org.objectweb.asm.tree.IincInsnNode;
-import org.objectweb.asm.tree.IntInsnNode;
-import org.objectweb.asm.tree.LdcInsnNode;
-import org.objectweb.asm.tree.MethodInsnNode;
-import org.objectweb.asm.tree.TypeInsnNode;
-import org.objectweb.asm.tree.VarInsnNode;
 
 /**
  * From the very helpful ASMHelper pack

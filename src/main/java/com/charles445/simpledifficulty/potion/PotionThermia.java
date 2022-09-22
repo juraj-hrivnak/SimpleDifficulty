@@ -1,15 +1,12 @@
 package com.charles445.simpledifficulty.potion;
 
 import com.charles445.simpledifficulty.api.SDCapabilities;
-import com.charles445.simpledifficulty.api.SDDamageSources;
 import com.charles445.simpledifficulty.api.SDPotions;
 import com.charles445.simpledifficulty.api.temperature.ITemperatureCapability;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.DamageUtil;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public abstract class PotionThermia extends PotionBase

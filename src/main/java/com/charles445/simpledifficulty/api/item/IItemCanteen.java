@@ -1,10 +1,9 @@
 package com.charles445.simpledifficulty.api.item;
 
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.api.thirst.ThirstEnum;
-
 import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nullable;
 
 /** Interface for ItemCanteen
  * <br>

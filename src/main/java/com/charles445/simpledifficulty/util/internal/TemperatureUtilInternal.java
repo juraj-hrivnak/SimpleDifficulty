@@ -1,13 +1,7 @@
 package com.charles445.simpledifficulty.util.internal;
 
-import com.charles445.simpledifficulty.api.temperature.ITemperatureDynamicModifier;
-import com.charles445.simpledifficulty.api.temperature.ITemperatureModifier;
-import com.charles445.simpledifficulty.api.temperature.ITemperatureUtil;
-import com.charles445.simpledifficulty.api.temperature.TemperatureEnum;
-import com.charles445.simpledifficulty.api.temperature.TemperatureRegistry;
-import com.charles445.simpledifficulty.debug.DebugUtil;
+import com.charles445.simpledifficulty.api.temperature.*;
 import com.charles445.simpledifficulty.util.WorldUtil;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;

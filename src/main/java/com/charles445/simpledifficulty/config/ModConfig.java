@@ -10,7 +10,6 @@ import com.charles445.simpledifficulty.config.compat.ConfigServerCompatibility;
 import com.charles445.simpledifficulty.network.MessageConfigLAN;
 import com.charles445.simpledifficulty.network.MessageUpdateConfig;
 import com.charles445.simpledifficulty.network.PacketHandler;
-
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.config.Config;

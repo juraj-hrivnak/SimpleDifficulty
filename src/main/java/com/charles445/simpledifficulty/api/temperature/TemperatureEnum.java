@@ -1,7 +1,5 @@
 package com.charles445.simpledifficulty.api.temperature;
 
-import net.minecraft.util.math.MathHelper;
-
 public enum TemperatureEnum
 {
 	//Must be in order

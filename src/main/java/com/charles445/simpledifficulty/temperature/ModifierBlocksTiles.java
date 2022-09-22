@@ -1,8 +1,5 @@
 package com.charles445.simpledifficulty.temperature;
 
-import java.util.List;
-import java.util.Map;
-
 import com.charles445.simpledifficulty.api.config.JsonConfig;
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
@@ -11,7 +8,6 @@ import com.charles445.simpledifficulty.api.temperature.ITemperatureTileEntity;
 import com.charles445.simpledifficulty.config.JsonConfigInternal;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.WorldUtil;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -20,6 +16,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ChunkCache;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
+
+import java.util.List;
+import java.util.Map;
 
 public class ModifierBlocksTiles extends ModifierBase
 {

@@ -1,10 +1,10 @@
 package com.charles445.simpledifficulty.api;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class SDItems
 {

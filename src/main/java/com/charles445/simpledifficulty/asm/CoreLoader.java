@@ -1,10 +1,9 @@
 package com.charles445.simpledifficulty.asm;
 
-import java.util.Map;
-
 import com.charles445.simpledifficulty.asm.helper.ObfHelper;
-
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+
+import java.util.Map;
 
 @IFMLLoadingPlugin.Name("SimpleDifficulty ASM")
 @IFMLLoadingPlugin.SortingIndex(1001)

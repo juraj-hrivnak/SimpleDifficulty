@@ -1,14 +1,13 @@
 package com.charles445.simpledifficulty.compat.mod;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.temperature.ModifierBase;
-
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 public class HarvestFestivalModifier extends ModifierBase
 {

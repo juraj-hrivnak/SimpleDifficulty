@@ -1,11 +1,5 @@
 package com.charles445.simpledifficulty.compat.mod;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-import javax.annotation.Nullable;
-
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.SDDamageSources;
@@ -20,7 +14,6 @@ import com.charles445.simpledifficulty.compat.shadow.InspirationsShadow.ICauldro
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.util.ReflectUtil;
 import com.charles445.simpledifficulty.util.SoundUtil;
-
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,6 +26,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+
+import javax.annotation.Nullable;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class InspirationsHandler
 {

@@ -2,7 +2,6 @@ package com.charles445.simpledifficulty.network;
 
 import com.charles445.simpledifficulty.api.SDCapabilities;
 import com.charles445.simpledifficulty.api.temperature.ITemperatureCapability;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
