@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class TemperatureCapability implements ITemperatureCapability
 {
@@ -148,8 +149,14 @@ public class TemperatureCapability implements ITemperatureCapability
 				if(TemperatureEnum.BURNING.getMiddle() < getTemperatureLevel() && !player.isPotionActive(SDPotions.heat_resist) && !player.isSpectator() && !player.isCreative())
 				{
 					//Hyperthermia
+					int amplifier = 0;
+					if (player.getActivePotionEffect(SDPotions.hyperthermia) != null && Objects.requireNonNull(player.getActivePotionEffect(SDPotions.hyperthermia)).getAmplifier() == 0)
+						amplifier = 1;
+					else if (player.getActivePotionEffect(SDPotions.hyperthermia) != null)
+						amplifier = 1 + Objects.requireNonNull(player.getActivePotionEffect(SDPotions.hyperthermia)).getAmplifier();
+
 					player.removePotionEffect(SDPotions.hyperthermia);
-					player.addPotionEffect(new PotionEffect(SDPotions.hyperthermia, ModConfig.server.temperature.temperatureDamageDuration, 0));
+					player.addPotionEffect(new PotionEffect(SDPotions.hyperthermia, ModConfig.server.temperature.temperatureDamageDuration, amplifier));
 					appliedEffect = true;
 				}
 			}
@@ -158,8 +165,14 @@ public class TemperatureCapability implements ITemperatureCapability
 				if(TemperatureEnum.FREEZING.getMiddle() >= getTemperatureLevel() && !player.isPotionActive(SDPotions.cold_resist) && !player.isSpectator() && !player.isCreative())
 				{
 					//Hypothermia
+					int amplifier = 0;
+					if (player.getActivePotionEffect(SDPotions.hypothermia) != null && Objects.requireNonNull(player.getActivePotionEffect(SDPotions.hypothermia)).getAmplifier() == 0)
+						amplifier = 1;
+					else if (player.getActivePotionEffect(SDPotions.hypothermia) != null)
+						amplifier = 1 + Objects.requireNonNull(player.getActivePotionEffect(SDPotions.hypothermia)).getAmplifier();
+
 					player.removePotionEffect(SDPotions.hypothermia);
-					player.addPotionEffect(new PotionEffect(SDPotions.hypothermia, ModConfig.server.temperature.temperatureDamageDuration, 0));
+					player.addPotionEffect(new PotionEffect(SDPotions.hypothermia, ModConfig.server.temperature.temperatureDamageDuration, amplifier));
 					appliedEffect = true;
 				}
 			}

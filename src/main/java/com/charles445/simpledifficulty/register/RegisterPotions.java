@@ -4,6 +4,8 @@ import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDPotions;
 import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.potion.*;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.IAttribute;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionType;
@@ -24,8 +26,8 @@ public class RegisterPotions
 		{
 			final IForgeRegistry<Potion> registry = event.getRegistry();
 			
-			hyperthermia = registerAs("hyperthermia", new PotionHyperthermia(), registry);
-			hypothermia = registerAs("hypothermia", new PotionHypothermia(), registry);
+			hyperthermia = registerAs("hyperthermia", new PotionHyperthermia(), registry, SharedMonsterAttributes.MAX_HEALTH, "8452B93A-62A1-4FD5-8A00-350FE3D1CFFF", -0.15000000596046448D, 2);
+			hypothermia = registerAs("hypothermia", new PotionHypothermia(), registry, SharedMonsterAttributes.MAX_HEALTH, "17FC672A-FBEF-4A20-8B7C-D8307C7E0258", -0.15000000596046448D, 2);
 			thirsty = registerAs("thirsty", new PotionThirsty(), registry);
 			parasites = registerAs("parasites", new PotionParasites(), registry);
 			
@@ -48,7 +50,7 @@ public class RegisterPotions
 		
 		private static PotionType registerTypeAs(String name, final Potion potion, int duration, IForgeRegistry<PotionType> registry)
 		{
-			final PotionType potionType = new PotionType(new PotionEffect[]{new PotionEffect(potion,duration)});
+			final PotionType potionType = new PotionType(new PotionEffect(potion,duration));
 			potionType.setRegistryName(SimpleDifficulty.MODID, name);
 			registry.register(potionType);
 			
@@ -67,6 +69,19 @@ public class RegisterPotions
 			//Add to generic potion map with settings
 			SDPotions.potions.put(name, potion);
 			
+			return potion;
+		}
+
+		private static Potion registerAs(String name, final Potion potion, IForgeRegistry<Potion> registry, IAttribute attribute, String uniqueId, double ammount, int operation)
+		{
+			potion.setRegistryName(SimpleDifficulty.MODID,name);
+			//TODO consider including modid to effect name
+			potion.setPotionName("effect."+name);
+			registry.register(potion.registerPotionAttributeModifier(attribute, uniqueId, ammount, operation));
+
+			//Add to generic potion map with settings
+			SDPotions.potions.put(name, potion);
+
 			return potion;
 		}
 	}

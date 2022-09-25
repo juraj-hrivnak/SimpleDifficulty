@@ -1,6 +1,5 @@
 package com.charles445.simpledifficulty.potion;
 
-import com.charles445.simpledifficulty.api.SDDamageSources;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 
@@ -25,9 +24,6 @@ public class PotionHypothermia extends PotionThermia
 	@Override
 	public void attackPlayer(EntityPlayer player, float damage)
 	{
-		if (player.getHealth() > 1.0F)
-		{
-			player.attackEntityFrom(SDDamageSources.HYPOTHERMIA, damage);
-		}
+
 	}
 }
