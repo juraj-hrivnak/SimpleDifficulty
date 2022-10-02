@@ -9,6 +9,7 @@ import com.charles445.simpledifficulty.debug.DebugUtil;
 import com.charles445.simpledifficulty.util.WorldUtil;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -149,14 +150,7 @@ public class TemperatureCapability implements ITemperatureCapability
 				if(TemperatureEnum.BURNING.getMiddle() < getTemperatureLevel() && !player.isPotionActive(SDPotions.heat_resist) && !player.isSpectator() && !player.isCreative())
 				{
 					//Hyperthermia
-					int amplifier = 0;
-					if (player.getActivePotionEffect(SDPotions.hyperthermia) != null && Objects.requireNonNull(player.getActivePotionEffect(SDPotions.hyperthermia)).getAmplifier() == 0)
-						amplifier = 1;
-					else if (player.getActivePotionEffect(SDPotions.hyperthermia) != null)
-						amplifier = 1 + Objects.requireNonNull(player.getActivePotionEffect(SDPotions.hyperthermia)).getAmplifier();
-
-					player.removePotionEffect(SDPotions.hyperthermia);
-					player.addPotionEffect(new PotionEffect(SDPotions.hyperthermia, ModConfig.server.temperature.temperatureDamageDuration, amplifier));
+					addAmplifiedTemperatureEffect(player, SDPotions.hyperthermia);
 					appliedEffect = true;
 				}
 			}
@@ -165,14 +159,7 @@ public class TemperatureCapability implements ITemperatureCapability
 				if(TemperatureEnum.FREEZING.getMiddle() >= getTemperatureLevel() && !player.isPotionActive(SDPotions.cold_resist) && !player.isSpectator() && !player.isCreative())
 				{
 					//Hypothermia
-					int amplifier = 0;
-					if (player.getActivePotionEffect(SDPotions.hypothermia) != null && Objects.requireNonNull(player.getActivePotionEffect(SDPotions.hypothermia)).getAmplifier() == 0)
-						amplifier = 1;
-					else if (player.getActivePotionEffect(SDPotions.hypothermia) != null)
-						amplifier = 1 + Objects.requireNonNull(player.getActivePotionEffect(SDPotions.hypothermia)).getAmplifier();
-
-					player.removePotionEffect(SDPotions.hypothermia);
-					player.addPotionEffect(new PotionEffect(SDPotions.hypothermia, ModConfig.server.temperature.temperatureDamageDuration, amplifier));
+					addAmplifiedTemperatureEffect(player, SDPotions.hypothermia);
 					appliedEffect = true;
 				}
 			}
@@ -194,7 +181,7 @@ public class TemperatureCapability implements ITemperatureCapability
 		}
 		
 		//I hope this isn't an expensive or leaky operation
-		//There's probably a better way to do this but I'm worried about concurrency, as always
+		//There's probably a better way to do this, but I'm worried about concurrency, as always
 		Map<String, TemporaryModifier> tweaks = new HashMap<String, TemporaryModifier>();
 		
 		int modifierSize = temporaryModifiers.size();
@@ -272,6 +259,26 @@ public class TemperatureCapability implements ITemperatureCapability
 		
 		
 		return Math.max(ModConfig.server.temperature.temperatureTickMin, ModConfig.server.temperature.temperatureTickMax - ((currentrange * tickrange) / temprange) - (escapingDanger ? ModConfig.server.temperature.temperatureTickDangerBoost : 0));
+	}
+
+	private void addAmplifiedTemperatureEffect(EntityPlayer player, Potion potionIn)
+	{
+		int amplifier = 0;
+
+		if (player.getMaxHealth() >= 8)
+		{
+			if (player.getActivePotionEffect(potionIn) != null && Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier() == 0)
+			{
+				amplifier = 1;
+			}
+			else if (player.getActivePotionEffect(potionIn) != null)
+			{
+				amplifier = 1 + Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier();
+			}
+		}
+
+		player.removePotionEffect(potionIn);
+		player.addPotionEffect(new PotionEffect(potionIn, ModConfig.server.temperature.temperatureDamageDuration, amplifier));
 	}
 
 	@Override
