@@ -279,12 +279,7 @@ public class TemperatureCapability implements ITemperatureCapability
 				}
 				else
 				{
-					amplifier = 1 + activeAmplifier;
-				}
-
-				if (player.getMaxHealth() < player.getHealth())
-				{
-					player.attackEntityFrom(damageSource, player.getMaxHealth() - player.getHealth());
+					amplifier = activeAmplifier + 1;
 				}
 			}
 			else

@@ -26,10 +26,20 @@ public class PotionHypothermia extends PotionThermia
 	@Override
 	public void attackPlayer(EntityPlayer player, float damage, int amplifier)
 	{
-		if (amplifier >= 4)
+		if (amplifier >= 4 && amplifier < 6)
 		{
 			player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 405, 0));
 			player.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 405, 0));
+		}
+		else if (amplifier >= 6 && amplifier < 8)
+		{
+			player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 405, 1));
+			player.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 405, 1));
+		}
+		else if (amplifier >= 8)
+		{
+			player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 405, 2));
+			player.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 405, 2));
 		}
 	}
 }
