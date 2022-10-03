@@ -1,6 +1,5 @@
 package com.charles445.simpledifficulty.potion;
 
-import com.charles445.simpledifficulty.api.SDDamageSources;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
@@ -27,11 +26,10 @@ public class PotionHypothermia extends PotionThermia
 	@Override
 	public void attackPlayer(EntityPlayer player, float damage, int amplifier)
 	{
-		if (player.getMaxHealth() < 4.0F && player.getHealth() > 1.0F)
+		if (amplifier >= 4)
 		{
-			player.attackEntityFrom(SDDamageSources.HYPOTHERMIA, 1.0F);
-			player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 300, 1));
-			player.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 300, 1));
+			player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 405, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 405, 0));
 		}
 	}
 }

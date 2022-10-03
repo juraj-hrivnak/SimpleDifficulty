@@ -1,5 +1,6 @@
 package com.charles445.simpledifficulty.capability;
 
+import com.charles445.simpledifficulty.api.SDDamageSources;
 import com.charles445.simpledifficulty.api.SDPotions;
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
@@ -11,6 +12,7 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
@@ -150,7 +152,7 @@ public class TemperatureCapability implements ITemperatureCapability
 				if(TemperatureEnum.BURNING.getMiddle() < getTemperatureLevel() && !player.isPotionActive(SDPotions.heat_resist) && !player.isSpectator() && !player.isCreative())
 				{
 					//Hyperthermia
-					addAmplifiedTemperatureEffect(player, SDPotions.hyperthermia);
+					applyTemperatureEffect(player, SDPotions.hyperthermia, SDDamageSources.HYPERTHERMIA);
 					appliedEffect = true;
 				}
 			}
@@ -159,7 +161,7 @@ public class TemperatureCapability implements ITemperatureCapability
 				if(TemperatureEnum.FREEZING.getMiddle() >= getTemperatureLevel() && !player.isPotionActive(SDPotions.cold_resist) && !player.isSpectator() && !player.isCreative())
 				{
 					//Hypothermia
-					addAmplifiedTemperatureEffect(player, SDPotions.hypothermia);
+					applyTemperatureEffect(player, SDPotions.hypothermia, SDDamageSources.HYPOTHERMIA);
 					appliedEffect = true;
 				}
 			}
@@ -261,26 +263,33 @@ public class TemperatureCapability implements ITemperatureCapability
 		return Math.max(ModConfig.server.temperature.temperatureTickMin, ModConfig.server.temperature.temperatureTickMax - ((currentrange * tickrange) / temprange) - (escapingDanger ? ModConfig.server.temperature.temperatureTickDangerBoost : 0));
 	}
 
-	private void addAmplifiedTemperatureEffect(EntityPlayer player, Potion potionIn)
+	private void applyTemperatureEffect(EntityPlayer player, Potion potionIn, DamageSource damageSource)
 	{
 		int amplifier = 0;
 
 		if (player.getActivePotionEffect(potionIn) != null)
 		{
+			int activeAmplifier = Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier();
+
 			if (player.getMaxHealth() >= 4.0F)
 			{
-				if (Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier() == 0)
+				if (activeAmplifier == 0)
 				{
 					amplifier = 1;
 				}
-				else if (player.getActivePotionEffect(potionIn) != null)
+				else
 				{
-					amplifier = 1 + Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier();
+					amplifier = 1 + activeAmplifier;
+				}
+
+				if (player.getMaxHealth() < player.getHealth())
+				{
+					player.attackEntityFrom(damageSource, player.getMaxHealth() - player.getHealth());
 				}
 			}
 			else
 			{
-				amplifier = Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier();
+				amplifier = activeAmplifier;
 			}
 		}
 
