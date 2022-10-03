@@ -25,7 +25,7 @@ public class TemperatureCapability implements ITemperatureCapability
 	private int ticktimer = 0;
 	private int damagecounter = 0;
 	
-	private Map<String, TemporaryModifier> temporaryModifiers = new HashMap<String, TemporaryModifier>();
+	private final Map<String, TemporaryModifier> temporaryModifiers = new HashMap<>();
 	
 	//Unsaved data
 	private int oldtemperature = 0;
@@ -265,15 +265,22 @@ public class TemperatureCapability implements ITemperatureCapability
 	{
 		int amplifier = 0;
 
-		if (player.getMaxHealth() >= 8)
+		if (player.getActivePotionEffect(potionIn) != null)
 		{
-			if (player.getActivePotionEffect(potionIn) != null && Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier() == 0)
+			if (player.getMaxHealth() >= 4.0F)
 			{
-				amplifier = 1;
+				if (Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier() == 0)
+				{
+					amplifier = 1;
+				}
+				else if (player.getActivePotionEffect(potionIn) != null)
+				{
+					amplifier = 1 + Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier();
+				}
 			}
-			else if (player.getActivePotionEffect(potionIn) != null)
+			else
 			{
-				amplifier = 1 + Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier();
+				amplifier = Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier();
 			}
 		}
 

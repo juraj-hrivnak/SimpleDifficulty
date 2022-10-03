@@ -27,11 +27,11 @@ public abstract class PotionThermia extends PotionBase
 			{
 				ITemperatureCapability capability = SDCapabilities.getTemperatureData(player);
 				float damage = 0.5f + (0.5f * (float)capability.getTemperatureDamageCounter() * (float)ModConfig.server.temperature.temperatureDamageScaling);
-				attackPlayer(player, damage);
+				attackPlayer(player, damage, amplifier);
 				capability.addTemperatureDamageCounter(1);
 			}
 		}
 	}
 	
-	public abstract void attackPlayer(EntityPlayer player, float damage);
+	public abstract void attackPlayer(EntityPlayer player, float damage, int amplifier);
 }

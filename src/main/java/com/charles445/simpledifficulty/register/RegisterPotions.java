@@ -26,8 +26,8 @@ public class RegisterPotions
 		{
 			final IForgeRegistry<Potion> registry = event.getRegistry();
 			
-			hyperthermia = registerAs("hyperthermia", new PotionHyperthermia(), registry, SharedMonsterAttributes.MAX_HEALTH, "8452B93A-62A1-4FD5-8A00-350FE3D1CFFF", -0.15000000596046448D, 2);
-			hypothermia = registerAs("hypothermia", new PotionHypothermia(), registry, SharedMonsterAttributes.MAX_HEALTH, "17FC672A-FBEF-4A20-8B7C-D8307C7E0258", -0.15000000596046448D, 2);
+			hyperthermia = registerAs("hyperthermia", new PotionHyperthermia(), registry, SharedMonsterAttributes.MAX_HEALTH, "8452B93A-62A1-4FD5-8A00-350FE3D1CFFF", -0.1D, 1);
+			hypothermia = registerAs("hypothermia", new PotionHypothermia(), registry, SharedMonsterAttributes.MAX_HEALTH, "17FC672A-FBEF-4A20-8B7C-D8307C7E0258", -0.1D, 1);
 			thirsty = registerAs("thirsty", new PotionThirsty(), registry);
 			parasites = registerAs("parasites", new PotionParasites(), registry);
 			
