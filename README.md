@@ -1,2 +1,2 @@
-# SimpleDifficulty
- Difficulty mod based on Tough as Nails
+# SimpleDifficulty for Underdog
+Fork of SimpleDifficulty. Adds salt & fresh water.
