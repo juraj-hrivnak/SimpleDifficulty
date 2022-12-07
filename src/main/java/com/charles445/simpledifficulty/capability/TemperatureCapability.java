@@ -9,6 +9,9 @@ import com.charles445.simpledifficulty.config.ModConfig;
 import com.charles445.simpledifficulty.debug.DebugUtil;
 import com.charles445.simpledifficulty.util.WorldUtil;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -26,9 +29,9 @@ public class TemperatureCapability implements ITemperatureCapability
 	private int temperature = 12;
 	private int ticktimer = 0;
 	private int damagecounter = 0;
-	
+
 	private final Map<String, TemporaryModifier> temporaryModifiers = new HashMap<>();
-	
+
 	//Unsaved data
 	private int oldtemperature = 0;
 	private int updatetimer = 500; //Update immediately first time around
@@ -49,7 +52,7 @@ public class TemperatureCapability implements ITemperatureCapability
 	{
 		return ticktimer;
 	}
-	
+
 	@Override
 	public int getTemperatureDamageCounter()
 	{
@@ -65,9 +68,9 @@ public class TemperatureCapability implements ITemperatureCapability
 	@Override
 	public void setTemperatureTickTimer(int ticktimer)
 	{
-		this.ticktimer=ticktimer;	
+		this.ticktimer=ticktimer;
 	}
-	
+
 	@Override
 	public void setTemperatureDamageCounter(int damagecounter)
 	{
@@ -85,7 +88,7 @@ public class TemperatureCapability implements ITemperatureCapability
 	{
 		this.setTemperatureTickTimer(this.getTemperatureTickTimer() + ticktimer);
 	}
-	
+
 	@Override
 	public void addTemperatureDamageCounter(int damagecounter)
 	{
@@ -96,38 +99,38 @@ public class TemperatureCapability implements ITemperatureCapability
 	public void tickUpdate(EntityPlayer player, World world, TickEvent.Phase phase)
 	{
 		//NOTE Player can be in Creative or Spectator
-		
+
 		if(phase==TickEvent.Phase.START)
 		{
 			packetTimer++;
 			return;
 		}
-		
+
 		//DEBUG START
 		debugtimer++;
 		if(debugtimer>=40 && ServerConfig.instance.getBoolean(ServerOptions.DEBUG))
 		{
 			debugtimer = 0;
 			debugRoutine(player, world);
-			
+
 		}
 		//DEBUG END
-		
+
 		//Every 5 ticks
 		updatetimer++;
 		if(updatetimer>=5)
 		{
 			updatetimer = 0;
-			
+
 			//Refresh the player's target temperature
 			targettemp = TemperatureUtil.getPlayerTargetTemperature(player);
 		}
-		
+
 		//Increment tick timer
 		addTemperatureTickTimer(1);
-		
+
 		boolean appliedEffect = false;
-		
+
 		if(getTemperatureTickTimer() >= getTemperatureTickLimit())
 		{
 			setTemperatureTickTimer(0);
@@ -140,12 +143,12 @@ public class TemperatureCapability implements ITemperatureCapability
 					addTemperatureLevel(-1);
 				else
 					addTemperatureLevel(1);
-				
+
 				//DebugUtil.clientMessage(player, "Current Temperature: "+getTemperatureLevel());
 			}
-			
+
 			//Effects
-			
+
 			TemperatureEnum tempEnum = getTemperatureEnum();
 			if(tempEnum==TemperatureEnum.BURNING)
 			{
@@ -166,7 +169,7 @@ public class TemperatureCapability implements ITemperatureCapability
 				}
 			}
 		}
-		
+
 		if(!appliedEffect)
 		{
 			if(this.getTemperatureDamageCounter() != 0)
@@ -181,43 +184,43 @@ public class TemperatureCapability implements ITemperatureCapability
 				}
 			}
 		}
-		
+
 		//I hope this isn't an expensive or leaky operation
 		//There's probably a better way to do this, but I'm worried about concurrency, as always
 		Map<String, TemporaryModifier> tweaks = new HashMap<String, TemporaryModifier>();
-		
+
 		int modifierSize = temporaryModifiers.size();
-		
+
 		for(Map.Entry<String, TemporaryModifier> entry : temporaryModifiers.entrySet())
-		{	
+		{
 			TemporaryModifier tm = entry.getValue();
-			
+
 			if(tm.duration > 0)
 			{
 				tweaks.put(entry.getKey(), new TemporaryModifier(tm.temperature, tm.duration - 1));
 			}
 		}
-		
+
 		temporaryModifiers.clear();
 		temporaryModifiers.putAll(tweaks);
 		tweaks.clear();
-		
+
 		if(oldmodifiersize != temporaryModifiers.size())
 		{
 			this.manualDirty = true;
 		}
-		
+
 		oldmodifiersize = temporaryModifiers.size();
 	}
-	
+
 	private void debugRoutine(EntityPlayer player, World world)
 	{
 		//DebugUtil.clientMessage(player, ""+TemperatureUtil.getPlayerTargetTemperature(player));
-		
+
 		DebugUtil.clientMessage(player, "----------------");
 		//BlockPos pos = player.getPosition();
 		BlockPos pos = WorldUtil.getSidedBlockPos(world, player);
-		
+
 		float cumulative = 0;
 		for(ITemperatureModifier modifier : TemperatureRegistry.modifiers.values())
 		{
@@ -227,7 +230,7 @@ public class TemperatureCapability implements ITemperatureCapability
 			modsum += modifier.getPlayerInfluence(player);
 			long nanotime2 = System.nanoTime();
 			DebugUtil.clientMessage(player, ""+(nanotime2-nanotime)+" : "+modifier.getName()+" - "+modsum);
-			cumulative += modsum;	
+			cumulative += modsum;
 		}
 		for(ITemperatureDynamicModifier dynmodifier : TemperatureRegistry.dynamicModifiers.values())
 		{
@@ -238,49 +241,52 @@ public class TemperatureCapability implements ITemperatureCapability
 			long nanotime2 = System.nanoTime();
 			DebugUtil.clientMessage(player, ""+(nanotime2-nanotime)+" : "+dynmodifier.getName()+" - "+(cumulative-oldcumulative));
 		}
-		
-		DebugUtil.clientMessage(player, "( "+TemperatureUtil.getPlayerTargetTemperature(player)+ " )");	
+
+		DebugUtil.clientMessage(player, "( "+TemperatureUtil.getPlayerTargetTemperature(player)+ " )");
 		DebugUtil.clientMessage(player, "TempTickLimit: "+getTemperatureTickLimit());
 	}
-	
+
 	private int getTemperatureTickLimit()
 	{
 		//Get how quickly to change the player's temperature based on their current temperature and their target temperature
 
 		//TAN clamps the targettemp, this doesn't
-		
+
 		int tickrange = ModConfig.server.temperature.temperatureTickMax - ModConfig.server.temperature.temperatureTickMin;
 		//TODO phase this out also this is wrong
 		int temprange = TemperatureEnum.BURNING.getUpperBound() - TemperatureEnum.FREEZING.getLowerBound();
-		
+
 		//Distance of temperature range
 		int currentrange = Math.abs(getTemperatureLevel() - targettemp);
-		
+
 		//Whether player is escaping temperature danger
 		boolean escapingDanger = getTemperatureLevel() <= targettemp ? getTemperatureEnum() == TemperatureEnum.FREEZING : getTemperatureEnum() == TemperatureEnum.BURNING;
-		
-		
+
+
 		return Math.max(ModConfig.server.temperature.temperatureTickMin, ModConfig.server.temperature.temperatureTickMax - ((currentrange * tickrange) / temprange) - (escapingDanger ? ModConfig.server.temperature.temperatureTickDangerBoost : 0));
 	}
 
 	private void applyTemperatureEffect(EntityPlayer player, Potion potionIn, DamageSource damageSource)
 	{
 		int amplifier = 0;
+		float existingModifier = 0.0F;
+
+		IAttributeInstance attributeInstance = player.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.MAX_HEALTH);
+
+		for (AttributeModifier modifier : attributeInstance.getModifiersByOperation(0))
+		{
+			existingModifier += modifier.getAmount();
+		}
 
 		if (player.getActivePotionEffect(potionIn) != null)
 		{
 			int activeAmplifier = Objects.requireNonNull(player.getActivePotionEffect(potionIn)).getAmplifier();
 
-			if (player.getMaxHealth() >= 4.0F)
+			if (player.getMaxHealth() - (existingModifier + activeAmplifier * 2.0F) - 2.0F > 2.0F
+					&& attributeInstance.getModifiersByOperation(1).size() == 0
+					&& attributeInstance.getModifiersByOperation(2).size() == 0)
 			{
-				if (activeAmplifier == 0)
-				{
-					amplifier = 1;
-				}
-				else
-				{
-					amplifier = activeAmplifier + 1;
-				}
+				amplifier = activeAmplifier + 1;
 			}
 			else
 			{
@@ -322,10 +328,10 @@ public class TemperatureCapability implements ITemperatureCapability
 	{
 		//Prevent overriding with nothing or invalid results
 		//TODO some manner of determining what overrides what? Not a big deal right now
-		
+
 		if(temp == 0.0f || !Float.isFinite(temp))
 			return;
-		
+
 		if(this.temporaryModifiers.containsKey(name))
 		{
 			//Reset
@@ -333,13 +339,13 @@ public class TemperatureCapability implements ITemperatureCapability
 		}
 		this.temporaryModifiers.put(name, new TemporaryModifier(temp, duration));
 	}
-	
+
 	@Override
 	public void clearTemporaryModifiers()
 	{
 		this.temporaryModifiers.clear();
 	}
-	
+
 	@Override
 	public int getPacketTimer()
 	{
