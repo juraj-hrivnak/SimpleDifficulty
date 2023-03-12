@@ -8,12 +8,15 @@ import git.jbredwards.fluidlogged_api.api.block.IFluidloggableFluid;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
@@ -32,7 +35,7 @@ public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggable
 	{
 		super(fluid, material);
 		setRegistryName(fluid.getName());
-		setUnlocalizedName(Objects.requireNonNull(this.getRegistryName()).toString());
+		setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
 		SDFluids.fluidBlocks.put(fluid.getName(), this);
 
 		displacements.putAll(customDisplacements);
@@ -85,6 +88,25 @@ public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggable
 	public int getLightOpacity(IBlockState state)
 	{
 		return ServerConfig.instance.getBoolean(ServerOptions.PURIFIED_WATER_OPACITY) ? 1 : 3;
+	}
+
+	@Override
+	public boolean addLandingEffects(IBlockState state, WorldServer worldObj, BlockPos blockPosition, IBlockState iblockstate, EntityLivingBase entity, int numberOfParticles)
+	{
+		return true;
+	}
+
+	@Override
+	public boolean addRunningEffects(IBlockState state, World world, BlockPos pos, Entity entity)
+	{
+		return true;
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public boolean addDestroyEffects(World world, BlockPos pos, ParticleManager manager)
+	{
+		return true;
 	}
 
 	@Override

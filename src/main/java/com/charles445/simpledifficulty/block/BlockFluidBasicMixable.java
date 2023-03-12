@@ -19,18 +19,16 @@ public class BlockFluidBasicMixable extends BlockFluidBasic
 	public BlockFluidBasicMixable(Fluid fluid, Material material)
 	{
 		super(fluid, material);
-		setTickRandomly(true);
 	}
 
     @Override
-	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random)
+	public void updateTick(World world, BlockPos pos, IBlockState state, Random random)
 	{
-		if (!worldIn.isRemote) {
-			if (!worldIn.isBlockLoaded(pos)) return;
-			if (canMix(pos, worldIn))
-			{
-				scheduleMixing(worldIn, pos);
-			}
+		super.updateTick(world, pos, state, random);
+
+		if (canMix(pos, world))
+		{
+			scheduleMixing(world, pos);
 		}
 	}
 
