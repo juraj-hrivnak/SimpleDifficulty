@@ -99,7 +99,7 @@ public class RegisterItems
 		{
 			//Register
 			newItem.setRegistryName(SimpleDifficulty.MODID, name);
-			newItem.setUnlocalizedName(newItem.getRegistryName().toString());
+			newItem.setTranslationKey(newItem.getRegistryName().toString());
 			newItem.setCreativeTab(ModCreativeTab.instance);
 			registry.register(newItem);
 			

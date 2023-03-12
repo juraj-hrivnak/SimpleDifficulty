@@ -20,14 +20,13 @@ import java.io.File;
 	version = SimpleDifficulty.VERSION,
 	acceptedMinecraftVersions = "[1.12, 1.13)",
 	dependencies = "required-after:forge@[14.23.5.2838,);",
-	updateJSON = "https://raw.githubusercontent.com/Charles445/SimpleDifficulty/master/modupdatechecker.json"
-	
+	updateJSON = "https://raw.githubusercontent.com/juraj-hrivnak/SimpleDifficulty/master/modupdatechecker.json"
 )
 public class SimpleDifficulty 
 {
 	public static final String MODID = "simpledifficulty";
 	public static final String NAME = "SimpleDifficulty";
-	public static final String VERSION = "0.5.7";
+	public static final String VERSION = "0.5.8";
 	
 	@Mod.Instance(SimpleDifficulty.MODID)
 	public static SimpleDifficulty instance;

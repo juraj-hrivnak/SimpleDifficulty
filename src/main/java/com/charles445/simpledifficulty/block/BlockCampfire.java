@@ -223,14 +223,14 @@ public class BlockCampfire extends Block implements IBlockStateIgnore
 	}
 	
 	@Override
-	public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity)
+	public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity)
 	{
 		if(!world.isRemote && state.getValue(BURNING) && entity instanceof EntityLivingBase)
 		{
 			entity.setFire(1);
 		}
 	}
-	
+
 	@Override
 	public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face)
 	{
@@ -331,7 +331,7 @@ public class BlockCampfire extends Block implements IBlockStateIgnore
 	
 	@SideOnly(Side.CLIENT)
 	@Override
-  	public BlockRenderLayer getBlockLayer()
+  	public BlockRenderLayer getRenderLayer()
 	{
 		return BlockRenderLayer.CUTOUT;
 	}

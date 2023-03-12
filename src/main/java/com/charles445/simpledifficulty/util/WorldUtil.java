@@ -29,12 +29,12 @@ public class WorldUtil
 		if(entity instanceof EntityPlayer)
 		{
 			//Player
-			return new BlockPos(entity.getPositionVector().addVector(0, 0.5D, 0));
+			return new BlockPos(entity.getPositionVector().add(0, 0.5D, 0));
 		}
 		else if(entity instanceof EntityItemFrame)
 		{
 			//Item Frame
-			return new BlockPos(entity.getPositionVector().addVector(0D, -0.45D, 0D));
+			return new BlockPos(entity.getPositionVector().add(0D, -0.45D, 0D));
 		}
 		else
 		{

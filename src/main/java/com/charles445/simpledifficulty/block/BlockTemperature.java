@@ -250,11 +250,11 @@ public class BlockTemperature extends BlockContainer
 	
 	@SideOnly(Side.CLIENT)
 	@Override
-  	public BlockRenderLayer getBlockLayer()
+  	public BlockRenderLayer getRenderLayer()
 	{
 		return BlockRenderLayer.CUTOUT;
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	@Override
 	public float getAmbientOcclusionLightValue(IBlockState state)

@@ -44,7 +44,7 @@ public class ItemJuice extends ItemDrinkBase
 	}
 	
 	@Override
-	public String getUnlocalizedName(ItemStack stack)
+	public String getTranslationKey(ItemStack stack)
 	{
 		return "item."+SimpleDifficulty.MODID+":"+"juice_"+getEnumForStack(stack).toString();
 	}

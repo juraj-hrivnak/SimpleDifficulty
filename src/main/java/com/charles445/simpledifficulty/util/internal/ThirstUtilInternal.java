@@ -94,7 +94,7 @@ public class ThirstUtilInternal implements IThirstUtil
 		//Similar to Entity.rayTrace
 		Vec3d eyevec = player.getPositionEyes(1.0f);
 		Vec3d lookvec = player.getLook(1.0f);
-		Vec3d targetvec = eyevec.addVector(lookvec.x * reach, lookvec.y * reach, lookvec.z * reach);
+		Vec3d targetvec = eyevec.add(lookvec.x * reach, lookvec.y * reach, lookvec.z * reach);
 		
 		//Ray trace from the player's eyepos to where they are looking, and stop at liquids
 		RayTraceResult trace = player.getEntityWorld().rayTraceBlocks(eyevec, targetvec, true);

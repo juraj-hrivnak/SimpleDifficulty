@@ -1,16 +1,16 @@
 buildscript {
     repositories {
         mavenCentral()
-        maven { url = "https://files.minecraftforge.net/maven" }
+        maven { url = "https://maven.minecraftforge.net" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath "com.anatawa12.forge:ForgeGradle:2.3-1.0.7"
     }
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: "net.minecraftforge.gradle.forge"
 
 
-version = "1.12.2-0.5.7"
+version = "1.12.2-0.5.8"
 group = "com.charles445.simpledifficulty" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "SimpleDifficulty"
 
@@ -20,9 +20,9 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12.2-14.23.5.2838"
+    version = "1.12.2-14.23.5.2847"
     runDir = "run"
-    mappings = "snapshot_20171003"
+    mappings = "stable_39"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
@@ -43,7 +43,7 @@ dependencies {
     deobfCompile "curse.maven:farseek-229708:3093852"
 
     // Fluidlogged API
-    compileOnly 'com.github.jbredwards:fluidlogged-api:a51037976d'
+    compileOnly "com.github.jbredwards:fluidlogged-api:2573e41f3e"
 }
 
 processResources{

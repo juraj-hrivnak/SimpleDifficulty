@@ -44,7 +44,7 @@ public class ItemIronCanteen extends ItemCanteen
 	}
 	
 	@Override
-	public String getUnlocalizedName(ItemStack stack)
+	public String getTranslationKey(ItemStack stack)
 	{
 		if(isCanteenEmpty(stack))
 			return "item."+SimpleDifficulty.MODID+":"+"iron_canteen_empty";

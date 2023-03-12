@@ -87,7 +87,7 @@ public class ThirstHandler
 				
 				if(potionType.getRegistryName() != null)
 				{
-					String modDomain = potionType.getRegistryName().getResourceDomain();
+					String modDomain = potionType.getRegistryName().getNamespace();
 					
 					//Vanilla potions
 					if(modDomain.equals("minecraft"))
@@ -115,11 +115,11 @@ public class ThirstHandler
 			//For broader use cases like harvestcraft
 			
 			//23k with just loaded and disabled completely, every single time
-			//The stack getitem getregistryname getresourcedomain runs ten times faster on anything not mod specific
+			//The stack getitem getregistryname getNamespace runs ten times faster on anything not mod specific
 			//So now it takes 2k every single time, way better
 			//I'll be using this system for any further compatibility things like this, probably
 			/*
-			if(harvestcraftLoaded && stack.getItem().getRegistryName().getResourceDomain().equals(ModNames.HARVESTCRAFT) && ModConfig.server.compatibility.toggles.harvestCraft && !SDCompatibility.disabledCompletely.contains(ModNames.HARVESTCRAFT))
+			if(harvestcraftLoaded && stack.getItem().getRegistryName().getNamespace().equals(ModNames.HARVESTCRAFT) && ModConfig.server.compatibility.toggles.harvestCraft && !SDCompatibility.disabledCompletely.contains(ModNames.HARVESTCRAFT))
 			{
 				if(OreDictUtil.isOre(OreDictUtil.listAlljuice, stack))
 				{

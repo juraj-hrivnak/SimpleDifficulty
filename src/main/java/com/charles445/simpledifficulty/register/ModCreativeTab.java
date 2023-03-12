@@ -11,9 +11,9 @@ public class ModCreativeTab extends CreativeTabs
 	{
 		super(index, label);
 	}
-	
+
 	@Override
-	public ItemStack getTabIconItem()
+	public ItemStack createIcon()
 	{
 		//TODO better looking icon
 		return new ItemStack(SDItems.purifiedWaterBottle);

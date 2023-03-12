@@ -44,8 +44,8 @@ public class FluidHandler {
         Block southBlock = (world.getBlockState(pos.south()).getBlock());
         Block westBlock = (world.getBlockState(pos.west()).getBlock());
 
-        int xChunkPos = world.getChunkFromBlockCoords(pos).x;
-        int zChunkPos = world.getChunkFromBlockCoords(pos).z;
+        int xChunkPos = world.getChunk(pos).x;
+        int zChunkPos = world.getChunk(pos).z;
         BlockPos chunkPos = new BlockPos(xChunkPos * 16 + 8, 0, zChunkPos * 16 + 8);
 
         Biome biomeInNorthChunk = world.getBiomeForCoordsBody(chunkPos.north(32));

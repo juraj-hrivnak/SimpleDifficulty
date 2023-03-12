@@ -71,7 +71,7 @@ public class ItemCanteen extends ItemDrinkBase implements IItemCanteen
 	}
 	
 	@Override
-	public String getUnlocalizedName(ItemStack stack)
+	public String getTranslationKey(ItemStack stack)
 	{
 		if(isCanteenEmpty(stack))
 			return "item."+SimpleDifficulty.MODID+":"+"canteen_empty";
@@ -82,7 +82,7 @@ public class ItemCanteen extends ItemDrinkBase implements IItemCanteen
 		
 		return "item."+SimpleDifficulty.MODID+":"+"canteen_"+ThirstEnum.values()[type].toString();
 	}
-	
+
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand)
 	{

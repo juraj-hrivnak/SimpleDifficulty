@@ -49,7 +49,7 @@ public class RegisterClientModels
 		{
 			instance.tweakBlockModelState(SDBlocks.blocks.get(key));
 			
-			instance.registerBlockItemModel(Item.getItemFromBlock(SDBlocks.blocks.get(key)), SDBlocks.blocks.get(key).getUnlocalizedName());
+			instance.registerBlockItemModel(Item.getItemFromBlock(SDBlocks.blocks.get(key)), SDBlocks.blocks.get(key).getTranslationKey());
 		}
 	}
 	

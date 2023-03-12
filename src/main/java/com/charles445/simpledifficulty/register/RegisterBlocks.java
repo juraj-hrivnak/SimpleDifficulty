@@ -65,7 +65,7 @@ public class RegisterBlocks
 		private static Block registerAs(String name, final Block newBlock, IForgeRegistry<Block> registry)
 		{
 			newBlock.setRegistryName(SimpleDifficulty.MODID, name);
-			newBlock.setUnlocalizedName(newBlock.getRegistryName().toString());
+			newBlock.setTranslationKey(newBlock.getRegistryName().toString());
 			newBlock.setCreativeTab(ModCreativeTab.instance);
 			registry.register(newBlock);
 			

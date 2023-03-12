@@ -81,7 +81,7 @@ public class JsonCompatDefaults
 		for(ItemStack stack : OreDictUtil.listAlljuice)
 		{
 			ResourceLocation loc = stack.getItem().getRegistryName();
-			if(loc.getResourceDomain().equals(HARVESTCRAFT))
+			if(loc.getNamespace().equals(HARVESTCRAFT))
 			{
 				addDrink(loc.toString(), 6, 5.0f);
 			}
@@ -90,7 +90,7 @@ public class JsonCompatDefaults
 		for(ItemStack stack : OreDictUtil.listAllsoda)
 		{
 			ResourceLocation loc = stack.getItem().getRegistryName();
-			if(loc.getResourceDomain().equals(HARVESTCRAFT))
+			if(loc.getNamespace().equals(HARVESTCRAFT))
 			{
 				addDrink(loc.toString(), 9, 7.0f);
 			}
@@ -99,7 +99,7 @@ public class JsonCompatDefaults
 		for(ItemStack stack : OreDictUtil.listAllsmoothie)
 		{
 			ResourceLocation loc = stack.getItem().getRegistryName();
-			if(loc.getResourceDomain().equals(HARVESTCRAFT))
+			if(loc.getNamespace().equals(HARVESTCRAFT))
 			{
 				addDrink(loc.toString(), 9, 7.0f);
 			}
