@@ -273,9 +273,12 @@ public class TemperatureCapability implements ITemperatureCapability
 
 		IAttributeInstance attributeInstance = player.getAttributeMap().getAttributeInstance(SharedMonsterAttributes.MAX_HEALTH);
 
-		for (AttributeModifier modifier : attributeInstance.getModifiersByOperation(0))
-		{
-			existingModifier += modifier.getAmount();
+		for (AttributeModifier modifier : attributeInstance.getModifiersByOperation(0)) {
+			// Ignore Spice of Life: Carrot Edition's modifier
+			if (!modifier.getName().equals("Health Gained from Trying New Foods"))
+			{
+				existingModifier += modifier.getAmount();
+			}
 		}
 
 		if (player.getActivePotionEffect(potionIn) != null)
