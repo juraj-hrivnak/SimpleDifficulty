@@ -81,6 +81,8 @@ tile.simpledifficulty:rain_collector.name=Rain Collector
 tile.simpledifficulty:spit.name=Campfire Spit
 tile.simpledifficulty:purifiedwater.name=Regular Water
 tile.simpledifficulty:saltwater.name=Salt Water
+tile.simpledifficulty:purifiedwater_ice.name=Regular Water Ice
+tile.simpledifficulty:saltwater_ice.name=Salt Water Ice
 
 tipped_arrow.effect.cold_resist_type=Arrow of Cold Resistance
 tipped_arrow.effect.long_cold_resist_type=Arrow of Cold Resistance

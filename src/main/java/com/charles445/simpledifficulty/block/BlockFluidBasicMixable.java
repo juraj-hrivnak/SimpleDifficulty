@@ -16,16 +16,15 @@ import static com.charles445.simpledifficulty.handler.FluidHandler.scheduleMixin
 
 public class BlockFluidBasicMixable extends BlockFluidBasic
 {
-	public BlockFluidBasicMixable(Fluid fluid, Material material)
+	public BlockFluidBasicMixable(Fluid fluid, Material material, Block ice)
 	{
-		super(fluid, material);
+		super(fluid, material, ice);
 	}
 
     @Override
 	public void updateTick(World world, BlockPos pos, IBlockState state, Random random)
 	{
 		super.updateTick(world, pos, state, random);
-
 		if (canMix(pos, world))
 		{
 			scheduleMixing(world, pos);

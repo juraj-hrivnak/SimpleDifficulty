@@ -12,11 +12,14 @@ import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
@@ -27,18 +30,43 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 
 @Optional.Interface(iface = "git.jbredwards.fluidlogged_api.api.block.IFluidloggableFluid", modid = "fluidlogged_api")
 public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggableFluid
 {
-	public BlockFluidBasic(Fluid fluid, Material material)
+	Block ice;
+
+	public BlockFluidBasic(Fluid fluid, Material material, Block ice)
 	{
 		super(fluid, material);
+		this.ice = ice;
 		setRegistryName(fluid.getName());
 		setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
 		SDFluids.fluidBlocks.put(fluid.getName(), this);
 
 		displacements.putAll(customDisplacements);
+	}
+
+	@Override
+	public void updateTick(World world, BlockPos pos, IBlockState state, Random random)
+	{
+		super.updateTick(world, pos, state, random);
+
+		Biome biome = world.getBiome(pos);
+		float f = biome.getTemperature(pos);
+
+		if (!(f >= 0.15F) && world.getLightFor(EnumSkyBlock.BLOCK, pos) < 10 && state.getValue(LEVEL) == 0)
+		{
+			for (EnumFacing face : EnumFacing.HORIZONTALS)
+			{
+				if (world.getBlockState(pos.offset(face)).getBlock() != this)
+				{
+					world.setBlockState(pos, this.ice.getDefaultState());
+					break;
+				}
+			}
+		}
 	}
 
 	protected final static Map<Block, Boolean> customDisplacements = Maps.newHashMap();

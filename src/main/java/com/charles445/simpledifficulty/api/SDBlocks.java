@@ -18,4 +18,7 @@ public class SDBlocks
 	public static Block chiller;
 	
 	public static Block spit;
+
+	public static Block saltWaterIce;
+	public static Block purifiedWaterIce;
 }

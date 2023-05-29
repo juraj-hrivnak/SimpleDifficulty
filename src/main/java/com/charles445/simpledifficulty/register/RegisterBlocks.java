@@ -2,10 +2,7 @@ package com.charles445.simpledifficulty.register;
 
 import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.api.SDBlocks;
-import com.charles445.simpledifficulty.block.BlockCampfire;
-import com.charles445.simpledifficulty.block.BlockRainCollector;
-import com.charles445.simpledifficulty.block.BlockSpit;
-import com.charles445.simpledifficulty.block.BlockTemperature;
+import com.charles445.simpledifficulty.block.*;
 import com.charles445.simpledifficulty.tileentity.TileEntitySpit;
 import com.charles445.simpledifficulty.tileentity.TileEntityTemperature;
 import net.minecraft.block.Block;
@@ -19,6 +16,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import static com.charles445.simpledifficulty.api.SDBlocks.*;
+import static com.charles445.simpledifficulty.api.SDFluids.blockPurifiedWater;
+import static com.charles445.simpledifficulty.api.SDFluids.blockSaltWater;
 
 public class RegisterBlocks
 {
@@ -37,7 +36,10 @@ public class RegisterBlocks
 			chiller = registerAs("chiller", new BlockTemperature(-1.0f), registry);
 			
 			spit = registerAs("spit", new BlockSpit(), registry);
-			
+
+			saltWaterIce = registerAs("saltwater_ice", new BlockIceBasic(blockSaltWater), registry);
+			purifiedWaterIce = registerAs("purifiedwater_ice", new BlockIceBasic(blockPurifiedWater), registry);
+
 			//Tile Entities
 			GameRegistry.registerTileEntity(TileEntitySpit.class, new ResourceLocation(SimpleDifficulty.MODID, "campfirespit"));
 			GameRegistry.registerTileEntity(TileEntityTemperature.class, new ResourceLocation(SimpleDifficulty.MODID,"temperatureChanged"));
@@ -54,7 +56,8 @@ public class RegisterBlocks
 			registerItemBlock(heater, registry);
 			registerItemBlock(chiller, registry);
 			registerItemBlock(spit, registry);
-			
+			registerItemBlock(saltWaterIce, registry);
+			registerItemBlock(purifiedWaterIce, registry);
 		}
 		
 		private static void registerItemBlock(Block block,  IForgeRegistry<Item> registry)
