@@ -17,9 +17,11 @@ import com.charles445.simpledifficulty.handler.*;
 import com.charles445.simpledifficulty.temperature.*;
 import com.charles445.simpledifficulty.util.internal.TemperatureUtilInternal;
 import com.charles445.simpledifficulty.util.internal.ThirstUtilInternal;
+import com.charles445.simpledifficulty.world.gen.WorldGenIce;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public abstract class CommonProxy implements IProxy
 {
@@ -72,7 +74,8 @@ public abstract class CommonProxy implements IProxy
 	@Override
 	public void init()
 	{
-		
+		//Register Ice Generator
+		GameRegistry.registerWorldGenerator(new WorldGenIce(), 0);
 	}
 	
 	@Override
