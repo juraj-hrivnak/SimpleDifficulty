@@ -16,9 +16,9 @@ import static com.charles445.simpledifficulty.handler.FluidHandler.scheduleMixin
 
 public class BlockFluidBasicMixable extends BlockFluidBasic
 {
-	public BlockFluidBasicMixable(Fluid fluid, Material material, Block ice)
+	public BlockFluidBasicMixable(Fluid fluid, Material material, String iceBlock)
 	{
-		super(fluid, material, ice);
+		super(fluid, material, iceBlock);
 	}
 
     @Override

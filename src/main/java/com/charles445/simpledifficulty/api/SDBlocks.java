@@ -19,6 +19,6 @@ public class SDBlocks
 	
 	public static Block spit;
 
-	public static Block saltWaterIce;
-	public static Block purifiedWaterIce;
+	public static Block icePurifiedWater;
+	public static Block iceSaltWater;
 }

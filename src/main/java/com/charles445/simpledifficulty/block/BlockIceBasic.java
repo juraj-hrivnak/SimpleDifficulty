@@ -1,6 +1,6 @@
 package com.charles445.simpledifficulty.block;
 
-import net.minecraft.block.Block;
+import com.charles445.simpledifficulty.api.SDFluids;
 import net.minecraft.block.BlockIce;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -19,14 +19,15 @@ import java.util.Objects;
 
 public class BlockIceBasic extends BlockIce
 {
-    Block water;
+    private final String waterBlock;
 
-    public BlockIceBasic(Block water)
+    public BlockIceBasic(String waterBlock)
     {
-        this.water = water;
         this.setSoundType(SoundType.GLASS);
         this.setHardness(0.5F);
         this.setLightOpacity(3);
+
+        this.waterBlock = waterBlock;
     }
 
     @Override
@@ -60,7 +61,7 @@ public class BlockIceBasic extends BlockIce
 
             if (material.blocksMovement() || material.isLiquid())
             {
-                worldIn.setBlockState(pos, this.water.getDefaultState());
+                worldIn.setBlockState(pos, SDFluids.fluidBlocks.get(waterBlock).getDefaultState());
             }
         }
     }
@@ -75,8 +76,8 @@ public class BlockIceBasic extends BlockIce
         else
         {
             this.dropBlockAsItem(worldIn, pos, worldIn.getBlockState(pos), 0);
-            worldIn.setBlockState(pos, water.getDefaultState());
-            worldIn.neighborChanged(pos, water, pos);
+            worldIn.setBlockState(pos, SDFluids.fluidBlocks.get(waterBlock).getDefaultState());
+            worldIn.neighborChanged(pos, SDFluids.fluidBlocks.get(waterBlock), pos);
         }
     }
 

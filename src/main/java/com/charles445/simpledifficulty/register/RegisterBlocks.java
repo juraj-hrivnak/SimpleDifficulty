@@ -16,8 +16,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import static com.charles445.simpledifficulty.api.SDBlocks.*;
-import static com.charles445.simpledifficulty.api.SDFluids.blockPurifiedWater;
-import static com.charles445.simpledifficulty.api.SDFluids.blockSaltWater;
 
 public class RegisterBlocks
 {
@@ -37,8 +35,8 @@ public class RegisterBlocks
 			
 			spit = registerAs("spit", new BlockSpit(), registry);
 
-			saltWaterIce = registerAs("saltwater_ice", new BlockIceBasic(blockSaltWater), registry);
-			purifiedWaterIce = registerAs("purifiedwater_ice", new BlockIceBasic(blockPurifiedWater), registry);
+			icePurifiedWater = registerAs("purifiedwater_ice", new BlockIceBasic("purifiedwater"), registry);
+			iceSaltWater = registerAs("saltwater_ice", new BlockIceBasic("saltwater"), registry);
 
 			//Tile Entities
 			GameRegistry.registerTileEntity(TileEntitySpit.class, new ResourceLocation(SimpleDifficulty.MODID, "campfirespit"));
@@ -56,8 +54,8 @@ public class RegisterBlocks
 			registerItemBlock(heater, registry);
 			registerItemBlock(chiller, registry);
 			registerItemBlock(spit, registry);
-			registerItemBlock(saltWaterIce, registry);
-			registerItemBlock(purifiedWaterIce, registry);
+			registerItemBlock(icePurifiedWater, registry);
+			registerItemBlock(iceSaltWater, registry);
 		}
 		
 		private static void registerItemBlock(Block block,  IForgeRegistry<Item> registry)

@@ -24,8 +24,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.Objects;
 
-import static com.charles445.simpledifficulty.api.SDBlocks.purifiedWaterIce;
-import static com.charles445.simpledifficulty.api.SDBlocks.saltWaterIce;
 import static com.charles445.simpledifficulty.api.SDFluids.*;
 
 public class RegisterFluids
@@ -55,8 +53,8 @@ public class RegisterFluids
 			//Fluids register themselves
 			
 			//Create Fluid Blocks
-			blockPurifiedWater = new BlockFluidBasicMixable(purifiedWater, Material.WATER, purifiedWaterIce);
-			blockSaltWater = new BlockFluidBasic(saltWater, Material.WATER, saltWaterIce);
+			blockPurifiedWater = new BlockFluidBasicMixable(purifiedWater, Material.WATER, "purifiedwater_ice");
+			blockSaltWater = new BlockFluidBasic(saltWater, Material.WATER, "saltwater_ice");
 
 			for(String key : fluidBlocks.keySet())
 			{

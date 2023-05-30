@@ -1,18 +1,19 @@
 package com.charles445.simpledifficulty.block;
 
+import com.charles445.simpledifficulty.api.SDBlocks;
 import com.charles445.simpledifficulty.api.SDFluids;
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
 import com.google.common.collect.Maps;
 import git.jbredwards.fluidlogged_api.api.block.IFluidloggableFluid;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -35,17 +36,18 @@ import java.util.Random;
 @Optional.Interface(iface = "git.jbredwards.fluidlogged_api.api.block.IFluidloggableFluid", modid = "fluidlogged_api")
 public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggableFluid
 {
-	Block ice;
+	private final String iceBlock;
 
-	public BlockFluidBasic(Fluid fluid, Material material, Block ice)
+	public BlockFluidBasic(Fluid fluid, Material material, String iceBlock)
 	{
 		super(fluid, material);
-		this.ice = ice;
 		setRegistryName(fluid.getName());
 		setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
 		SDFluids.fluidBlocks.put(fluid.getName(), this);
 
 		displacements.putAll(customDisplacements);
+
+		this.iceBlock = iceBlock;
 	}
 
 	@Override
@@ -53,20 +55,31 @@ public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggable
 	{
 		super.updateTick(world, pos, state, random);
 
+		BlockPos posDown = new BlockPos(pos.getX(), 0, pos.getZ()).up(world.getPrecipitationHeight(pos).getY()).down();
+
+		if (this.canFreeze(world, posDown) && world.rand.nextInt(16) == 0)
+		{
+			world.setBlockState(posDown, SDBlocks.blocks.get(iceBlock).getDefaultState());
+		}
+	}
+
+	public boolean canFreeze(World world, BlockPos pos)
+	{
 		Biome biome = world.getBiome(pos);
 		float f = biome.getTemperature(pos);
 
-		if (!(f >= 0.15F) && world.getLightFor(EnumSkyBlock.BLOCK, pos) < 10 && state.getValue(LEVEL) == 0)
+		if (f <= 0.15F)
 		{
-			for (EnumFacing face : EnumFacing.HORIZONTALS)
+			if (pos.getY() >= 0 && pos.getY() < 256 && world.getLightFor(EnumSkyBlock.BLOCK, pos) < 10)
 			{
-				if (world.getBlockState(pos.offset(face)).getBlock() != this)
-				{
-					world.setBlockState(pos, this.ice.getDefaultState());
-					break;
-				}
+				IBlockState iblockstate1 = world.getBlockState(pos);
+				Block block = iblockstate1.getBlock();
+
+				return block == this && iblockstate1.getValue(BlockLiquid.LEVEL) == 0;
 			}
+
 		}
+		return false;
 	}
 
 	protected final static Map<Block, Boolean> customDisplacements = Maps.newHashMap();
