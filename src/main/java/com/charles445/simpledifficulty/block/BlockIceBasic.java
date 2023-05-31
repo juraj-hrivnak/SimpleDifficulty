@@ -12,10 +12,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.fml.common.Loader;
+import sereneseasons.season.SeasonASMHelper;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
+import java.util.Random;
 
 public class BlockIceBasic extends BlockIce
 {
@@ -63,6 +68,23 @@ public class BlockIceBasic extends BlockIce
             {
                 worldIn.setBlockState(pos, SDFluids.fluidBlocks.get(waterBlock).getDefaultState());
             }
+        }
+    }
+
+    @Override
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+    {
+        Biome biome = worldIn.getBiome(pos);
+        float f = biome.getTemperature(pos);
+
+        if (Loader.isModLoaded("sereneseasons"))
+        {
+            f = SeasonASMHelper.getFloatTemperature(worldIn, biome, pos);
+        }
+
+        if (f > 0.15F && worldIn.getLightFor(EnumSkyBlock.SKY, pos) > 11 - this.getDefaultState().getLightOpacity())
+        {
+            this.turnIntoWater(worldIn, pos);
         }
     }
 

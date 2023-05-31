@@ -28,6 +28,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import sereneseasons.season.SeasonASMHelper;
 
 import java.util.Map;
 import java.util.Objects;
@@ -67,6 +68,11 @@ public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggable
 	{
 		Biome biome = world.getBiome(pos);
 		float f = biome.getTemperature(pos);
+
+		if (Loader.isModLoaded("sereneseasons"))
+		{
+			f = SeasonASMHelper.getFloatTemperature(world, biome, pos);
+		}
 
 		if (f <= 0.15F)
 		{
