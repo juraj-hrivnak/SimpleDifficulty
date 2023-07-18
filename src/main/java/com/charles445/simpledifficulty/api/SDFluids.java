@@ -1,6 +1,7 @@
 package com.charles445.simpledifficulty.api;
 
 import com.charles445.simpledifficulty.block.BlockFluidBasic;
+import com.charles445.simpledifficulty.block.BlockFluidBasicMixable;
 import net.minecraftforge.fluids.Fluid;
 
 import java.util.LinkedHashMap;
@@ -13,5 +14,6 @@ public class SDFluids
 	
 	public static Fluid purifiedWater, saltWater;
 
-	public static BlockFluidBasic blockPurifiedWater, blockSaltWater;
+	public static BlockFluidBasicMixable blockPurifiedWater;
+	public static BlockFluidBasic blockSaltWater;
 }
