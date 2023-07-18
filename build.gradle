@@ -46,6 +46,9 @@ dependencies {
     // Serene Seasons
     compileOnly "curse.maven:sereneseasons-291874:2799213"
 
+    // Dynamic Trees
+    compileOnly "curse.maven:DynamicTrees-252818:3812473"
+
     // Fluidlogged API
     compileOnly "com.github.jbredwards:fluidlogged-api:2573e41f3e"
 }

@@ -9,8 +9,8 @@ import java.util.Map;
 
 public class SDFluids 
 {
-	public static final Map<String, Fluid> fluids = new LinkedHashMap<String, Fluid>();
-	public static final Map<String, BlockFluidBasic> fluidBlocks = new LinkedHashMap<String, BlockFluidBasic>();
+	public static final Map<String, Fluid> fluids = new LinkedHashMap<>();
+	public static final Map<String, BlockFluidBasic> fluidBlocks = new LinkedHashMap<>();
 	
 	public static Fluid purifiedWater, saltWater;
 
