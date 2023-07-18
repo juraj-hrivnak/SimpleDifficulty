@@ -4,6 +4,7 @@ import com.charles445.simpledifficulty.SimpleDifficulty;
 import com.charles445.simpledifficulty.block.BlockFluidBasic;
 import com.charles445.simpledifficulty.block.BlockFluidBasicMixable;
 import com.charles445.simpledifficulty.fluid.FluidBasic;
+import com.ferreusveritas.dynamictrees.systems.DirtHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -16,6 +17,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -59,6 +61,12 @@ public class RegisterFluids
 			for(String key : fluidBlocks.keySet())
 			{
 				registry.register(fluidBlocks.get(key));
+
+				//Dynamic Trees compat
+				if (Loader.isModLoaded("dynamictrees"))
+				{
+					DirtHelper.registerSoil(fluidBlocks.get(key), DirtHelper.WATERLIKE);
+				}
 			}
 		}
 
