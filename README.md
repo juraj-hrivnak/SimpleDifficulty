@@ -2,7 +2,6 @@
 
 Fork of SimpleDifficulty.
 
-- Fixed the wrong type for PurifiedWater in the API.
 - Added salt water and regular water. Vanilla water is now treated as spring water. (The water itself must be generated using another mod. Cave Generator is recommended).
 - Added compatibility for Biomes O' Plenty and Greenery aquatic plants.
 - Added Fluidlogged API compatibility.
