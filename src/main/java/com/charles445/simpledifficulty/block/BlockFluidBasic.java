@@ -5,7 +5,6 @@ import com.charles445.simpledifficulty.api.SDFluids;
 import com.charles445.simpledifficulty.api.config.ServerConfig;
 import com.charles445.simpledifficulty.api.config.ServerOptions;
 import com.google.common.collect.Maps;
-import git.jbredwards.fluidlogged_api.api.block.IFluidloggableFluid;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -25,7 +24,6 @@ import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import sereneseasons.season.SeasonASMHelper;
@@ -34,8 +32,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 
-@Optional.Interface(iface = "git.jbredwards.fluidlogged_api.api.block.IFluidloggableFluid", modid = "fluidlogged_api")
-public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggableFluid
+public class BlockFluidBasic extends BlockFluidClassic
 {
 	private final String iceBlock;
 
@@ -152,13 +149,6 @@ public class BlockFluidBasic extends BlockFluidClassic implements IFluidloggable
 	@SideOnly(Side.CLIENT)
 	@Override
 	public boolean addDestroyEffects(World world, BlockPos pos, ParticleManager manager)
-	{
-		return true;
-	}
-
-	@Override
-	@Optional.Method(modid = "fluidlogged_api")
-	public boolean isFluidloggableFluid()
 	{
 		return true;
 	}

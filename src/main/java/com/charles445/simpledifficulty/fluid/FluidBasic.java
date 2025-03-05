@@ -10,7 +10,6 @@ import net.minecraftforge.fml.common.Optional;
 
 import javax.annotation.Nonnull;
 
-
 @Optional.Interface(iface = "git.jbredwards.fluidlogged_api.api.fluid.ICompatibleFluid", modid = "fluidlogged_api")
 public class FluidBasic extends Fluid implements ICompatibleFluid
 {
